@@ -1,0 +1,25 @@
+#! /bin/bash
+#CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 79950
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py  -e 79950_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py  -e 79900_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py  -e 79850_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py  -e 79800_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py  -e 79750_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py  -e 79700_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py  -e 79650_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py  -e 79600_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py  -e 79550_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 79500_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 79450_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 79400_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 79350_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 79300_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 79250_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 79200_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 79150_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 79100_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 79050_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 79000_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 78900_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 78800_2
+CUDA_VISIBLE_DEVICES=1 python evaluate_b.py -e 78700_2

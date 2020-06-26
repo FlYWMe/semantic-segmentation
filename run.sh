@@ -1,0 +1,25 @@
+#! /bin/bash
+#CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 79950
+# CUDA_VISIBLE_DEVICES=3 python evaluate.py  -e 79950
+CUDA_VISIBLE_DEVICES=3 python evaluate.py  -e 79900
+CUDA_VISIBLE_DEVICES=3 python evaluate.py  -e 79850
+#CUDA_VISIBLE_DEVICES=3 python evaluate.py  -e 79800
+CUDA_VISIBLE_DEVICES=3 python evaluate.py  -e 79750
+CUDA_VISIBLE_DEVICES=3 python evaluate.py  -e 79700
+CUDA_VISIBLE_DEVICES=3 python evaluate.py  -e 79650
+CUDA_VISIBLE_DEVICES=3 python evaluate.py  -e 79600
+CUDA_VISIBLE_DEVICES=3 python evaluate.py  -e 79550
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 79500
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 79450
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 79400
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 79350
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 79300
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 79250
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 79200
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 79150
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 79100
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 79050
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 79000
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 78800
+CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 78600
+#CUDA_VISIBLE_DEVICES=3 python evaluate.py -e 78400

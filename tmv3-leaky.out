@@ -1,0 +1,1570 @@
+------------train
+------------train
+mynet(
+  (context_path): MobileNetV3_Large(
+    (conv1): Conv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (hs1): hswish()
+    (bneck): Sequential(
+      (0): Block(
+        (conv1): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): ReLU(inplace)
+        (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=16, bias=False)
+        (bn2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): ReLU(inplace)
+        (conv3): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (1): Block(
+        (conv1): Conv2d(16, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): ReLU(inplace)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=64, bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): ReLU(inplace)
+        (conv3): Conv2d(64, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (2): Block(
+        (conv1): Conv2d(24, 72, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(72, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): ReLU(inplace)
+        (conv2): Conv2d(72, 72, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=72, bias=False)
+        (bn2): BatchNorm2d(72, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): ReLU(inplace)
+        (conv3): Conv2d(72, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (3): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(40, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(10, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(24, 72, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(72, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): ReLU(inplace)
+        (conv2): Conv2d(72, 72, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=72, bias=False)
+        (bn2): BatchNorm2d(72, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): ReLU(inplace)
+        (conv3): Conv2d(72, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (4): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(40, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(10, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(40, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): ReLU(inplace)
+        (conv2): Conv2d(120, 120, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=120, bias=False)
+        (bn2): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): ReLU(inplace)
+        (conv3): Conv2d(120, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (5): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(40, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(10, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(40, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): ReLU(inplace)
+        (conv2): Conv2d(120, 120, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=120, bias=False)
+        (bn2): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): ReLU(inplace)
+        (conv3): Conv2d(120, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (6): Block(
+        (conv1): Conv2d(40, 240, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(240, 240, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=240, bias=False)
+        (bn2): BatchNorm2d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(240, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (7): Block(
+        (conv1): Conv2d(80, 200, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(200, 200, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=200, bias=False)
+        (bn2): BatchNorm2d(200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(200, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (8): Block(
+        (conv1): Conv2d(80, 184, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(184, 184, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=184, bias=False)
+        (bn2): BatchNorm2d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(184, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (9): Block(
+        (conv1): Conv2d(80, 184, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(184, 184, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=184, bias=False)
+        (bn2): BatchNorm2d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(184, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (10): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(112, 28, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(28, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(28, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(80, 480, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(480, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(480, 480, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=480, bias=False)
+        (bn2): BatchNorm2d(480, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(480, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential(
+          (0): Conv2d(80, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (11): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(112, 28, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(28, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(28, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+        (bn2): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (12): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(160, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(40, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(672, 672, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=672, bias=False)
+        (bn2): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(672, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential(
+          (0): Conv2d(112, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (13): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(160, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(40, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(160, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(672, 672, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=672, bias=False)
+        (bn2): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(672, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (14): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(160, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(40, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(960, 960, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=960, bias=False)
+        (bn2): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+    )
+  )
+  (global_context): GlobalContext(
+    (global_avg): AdaptiveAvgPool2d(output_size=1)
+    (conv_last): ConvBnRelu(
+      (conv): Conv2d(160, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bnrelu): InPlaceABNSync(128, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+    )
+    (se_channel_att): ATT(
+      (avg): AdaptiveAvgPool2d(output_size=1)
+      (amg): AdaptiveMaxPool2d(output_size=1)
+      (conv1): ConvBnRelu(
+        (conv): Conv2d(160, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bnrelu): InPlaceABNSync(128, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+      )
+      (conv2): ConvBnRelu(
+        (conv): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn): InPlaceABNSync(128, eps=1e-05, momentum=0.1, affine=True, activation=none)
+      )
+      (sigmoid): Sigmoid()
+    )
+  )
+  (keep_res): KeepRes(
+    (block1): sdBlock(
+      (conv): ConvBnRelu(
+        (conv): Conv2d(168, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bnrelu): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+      )
+      (bn1): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+      (bn2): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=none)
+      (relu): LeakyReLU(negative_slope=0.01)
+      (conv3x1_1): Conv2d(64, 64, kernel_size=(3, 1), stride=(1, 1), padding=(1, 0))
+      (conv1x3_1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1))
+      (conv3x1_2): Conv2d(64, 64, kernel_size=(3, 1), stride=(1, 1), padding=(2, 0), dilation=(2, 1))
+      (conv1x3_2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 2), dilation=(1, 2))
+      (conv3x1_3): Conv2d(64, 64, kernel_size=(3, 1), stride=(1, 1), padding=(5, 0), dilation=(5, 1))
+      (conv1x3_3): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 5), dilation=(1, 5))
+      (bn3): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=none)
+    )
+    (block2): sdBlock(
+      (conv): ConvBnRelu(
+        (conv): Conv2d(192, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bnrelu): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+      )
+      (bn1): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+      (bn2): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=none)
+      (relu): LeakyReLU(negative_slope=0.01)
+      (conv3x1_1): Conv2d(64, 64, kernel_size=(3, 1), stride=(1, 1), padding=(1, 0))
+      (conv1x3_1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1))
+      (conv3x1_2): Conv2d(64, 64, kernel_size=(3, 1), stride=(1, 1), padding=(2, 0), dilation=(2, 1))
+      (conv1x3_2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 2), dilation=(1, 2))
+      (conv3x1_3): Conv2d(64, 64, kernel_size=(3, 1), stride=(1, 1), padding=(5, 0), dilation=(5, 1))
+      (conv1x3_3): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 5), dilation=(1, 5))
+      (bn3): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=none)
+    )
+    (dim_reduction): ConvBnRelu(
+      (conv): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bnrelu): InPlaceABNSync(32, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+    )
+  )
+  (merge_att): MergeAttention(
+    (merge_att): ConvBnRelu(
+      (conv): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bnrelu): InPlaceABNSync(32, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+    )
+    (ch_avg_pool): AdaptiveAvgPool2d(output_size=1)
+    (channel_se): Sequential(
+      (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1))
+      (1): LeakyReLU(negative_slope=0.01)
+      (2): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1))
+      (3): InPlaceABNSync(32, eps=1e-05, momentum=0.1, affine=True, activation=none)
+      (4): Sigmoid()
+    )
+    (dim_reduction): ConvBnRelu(
+      (conv): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bnrelu): InPlaceABNSync(32, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+    )
+  )
+  (last_conv1): OutputLayer(
+    (drop): Dropout2d(p=0.1)
+    (conv): ConvBnRelu(
+      (conv): Conv2d(32, 19, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): InPlaceABNSync(19, eps=1e-05, momentum=0.1, affine=True, activation=none)
+    )
+  )
+  (last_conv2): OutputLayer(
+    (drop): Dropout2d(p=0.1)
+    (conv): ConvBnRelu(
+      (conv): Conv2d(32, 19, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): InPlaceABNSync(19, eps=1e-05, momentum=0.1, affine=True, activation=none)
+    )
+  )
+  (last_conv3): OutputLayer(
+    (drop): Dropout2d(p=0.1)
+    (conv): ConvBnRelu(
+      (conv): Conv2d(32, 19, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): InPlaceABNSync(19, eps=1e-05, momentum=0.1, affine=True, activation=none)
+    )
+  )
+)
+mynet(
+  (context_path): MobileNetV3_Large(
+    (conv1): Conv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (hs1): hswish()
+    (bneck): Sequential(
+      (0): Block(
+        (conv1): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): ReLU(inplace)
+        (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=16, bias=False)
+        (bn2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): ReLU(inplace)
+        (conv3): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (1): Block(
+        (conv1): Conv2d(16, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): ReLU(inplace)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=64, bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): ReLU(inplace)
+        (conv3): Conv2d(64, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (2): Block(
+        (conv1): Conv2d(24, 72, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(72, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): ReLU(inplace)
+        (conv2): Conv2d(72, 72, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=72, bias=False)
+        (bn2): BatchNorm2d(72, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): ReLU(inplace)
+        (conv3): Conv2d(72, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (3): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(40, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(10, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(24, 72, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(72, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): ReLU(inplace)
+        (conv2): Conv2d(72, 72, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=72, bias=False)
+        (bn2): BatchNorm2d(72, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): ReLU(inplace)
+        (conv3): Conv2d(72, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (4): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(40, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(10, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(40, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): ReLU(inplace)
+        (conv2): Conv2d(120, 120, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=120, bias=False)
+        (bn2): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): ReLU(inplace)
+        (conv3): Conv2d(120, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (5): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(40, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(10, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(40, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): ReLU(inplace)
+        (conv2): Conv2d(120, 120, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=120, bias=False)
+        (bn2): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): ReLU(inplace)
+        (conv3): Conv2d(120, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (6): Block(
+        (conv1): Conv2d(40, 240, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(240, 240, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=240, bias=False)
+        (bn2): BatchNorm2d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(240, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (7): Block(
+        (conv1): Conv2d(80, 200, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(200, 200, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=200, bias=False)
+        (bn2): BatchNorm2d(200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(200, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (8): Block(
+        (conv1): Conv2d(80, 184, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(184, 184, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=184, bias=False)
+        (bn2): BatchNorm2d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(184, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (9): Block(
+        (conv1): Conv2d(80, 184, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(184, 184, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=184, bias=False)
+        (bn2): BatchNorm2d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(184, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (10): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(112, 28, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(28, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(28, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(80, 480, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(480, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(480, 480, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=480, bias=False)
+        (bn2): BatchNorm2d(480, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(480, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential(
+          (0): Conv2d(80, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (11): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(112, 28, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(28, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(28, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+        (bn2): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (12): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(160, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(40, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(672, 672, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=672, bias=False)
+        (bn2): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(672, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential(
+          (0): Conv2d(112, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (13): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(160, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(40, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(160, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(672, 672, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=672, bias=False)
+        (bn2): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(672, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (14): Block(
+        (se): SeModule(
+          (se): Sequential(
+            (0): Conv2d(160, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace)
+            (3): Conv2d(40, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): hsigmoid()
+          )
+        )
+        (conv1): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear1): hswish()
+        (conv2): Conv2d(960, 960, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=960, bias=False)
+        (bn2): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (nolinear2): hswish()
+        (conv3): Conv2d(960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+    )
+  )
+  (global_context): GlobalContext(
+    (global_avg): AdaptiveAvgPool2d(output_size=1)
+    (conv_last): ConvBnRelu(
+      (conv): Conv2d(160, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bnrelu): InPlaceABNSync(128, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+    )
+    (se_channel_att): ATT(
+      (avg): AdaptiveAvgPool2d(output_size=1)
+      (amg): AdaptiveMaxPool2d(output_size=1)
+      (conv1): ConvBnRelu(
+        (conv): Conv2d(160, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bnrelu): InPlaceABNSync(128, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+      )
+      (conv2): ConvBnRelu(
+        (conv): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn): InPlaceABNSync(128, eps=1e-05, momentum=0.1, affine=True, activation=none)
+      )
+      (sigmoid): Sigmoid()
+    )
+  )
+  (keep_res): KeepRes(
+    (block1): sdBlock(
+      (conv): ConvBnRelu(
+        (conv): Conv2d(168, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bnrelu): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+      )
+      (bn1): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+      (bn2): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=none)
+      (relu): LeakyReLU(negative_slope=0.01)
+      (conv3x1_1): Conv2d(64, 64, kernel_size=(3, 1), stride=(1, 1), padding=(1, 0))
+      (conv1x3_1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1))
+      (conv3x1_2): Conv2d(64, 64, kernel_size=(3, 1), stride=(1, 1), padding=(2, 0), dilation=(2, 1))
+      (conv1x3_2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 2), dilation=(1, 2))
+      (conv3x1_3): Conv2d(64, 64, kernel_size=(3, 1), stride=(1, 1), padding=(5, 0), dilation=(5, 1))
+      (conv1x3_3): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 5), dilation=(1, 5))
+      (bn3): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=none)
+    )
+    (block2): sdBlock(
+      (conv): ConvBnRelu(
+        (conv): Conv2d(192, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bnrelu): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+      )
+      (bn1): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+      (bn2): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=none)
+      (relu): LeakyReLU(negative_slope=0.01)
+      (conv3x1_1): Conv2d(64, 64, kernel_size=(3, 1), stride=(1, 1), padding=(1, 0))
+      (conv1x3_1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1))
+      (conv3x1_2): Conv2d(64, 64, kernel_size=(3, 1), stride=(1, 1), padding=(2, 0), dilation=(2, 1))
+      (conv1x3_2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 2), dilation=(1, 2))
+      (conv3x1_3): Conv2d(64, 64, kernel_size=(3, 1), stride=(1, 1), padding=(5, 0), dilation=(5, 1))
+      (conv1x3_3): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 5), dilation=(1, 5))
+      (bn3): InPlaceABNSync(64, eps=1e-05, momentum=0.1, affine=True, activation=none)
+    )
+    (dim_reduction): ConvBnRelu(
+      (conv): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bnrelu): InPlaceABNSync(32, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+    )
+  )
+  (merge_att): MergeAttention(
+    (merge_att): ConvBnRelu(
+      (conv): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bnrelu): InPlaceABNSync(32, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+    )
+    (ch_avg_pool): AdaptiveAvgPool2d(output_size=1)
+    (channel_se): Sequential(
+      (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1))
+      (1): LeakyReLU(negative_slope=0.01)
+      (2): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1))
+      (3): InPlaceABNSync(32, eps=1e-05, momentum=0.1, affine=True, activation=none)
+      (4): Sigmoid()
+    )
+    (dim_reduction): ConvBnRelu(
+      (conv): Conv2d(128, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bnrelu): InPlaceABNSync(32, eps=1e-05, momentum=0.1, affine=True, activation=leaky_relu, slope=0.01)
+    )
+  )
+  (last_conv1): OutputLayer(
+    (drop): Dropout2d(p=0.1)
+    (conv): ConvBnRelu(
+      (conv): Conv2d(32, 19, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): InPlaceABNSync(19, eps=1e-05, momentum=0.1, affine=True, activation=none)
+    )
+  )
+  (last_conv2): OutputLayer(
+    (drop): Dropout2d(p=0.1)
+    (conv): ConvBnRelu(
+      (conv): Conv2d(32, 19, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): InPlaceABNSync(19, eps=1e-05, momentum=0.1, affine=True, activation=none)
+    )
+  )
+  (last_conv3): OutputLayer(
+    (drop): Dropout2d(p=0.1)
+    (conv): ConvBnRelu(
+      (conv): Conv2d(32, 19, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): InPlaceABNSync(19, eps=1e-05, momentum=0.1, affine=True, activation=none)
+    )
+  )
+)
+0
+1
+it: 100/80000, lr: 0.000020, loss: 9.7065, eta: 1 day, 6:53:12, time: 137.7712
+it: 200/80000, lr: 0.000040, loss: 9.2295, eta: 21:42:29, time: 57.1100
+it: 300/80000, lr: 0.000079, loss: 8.3969, eta: 18:47:01, time: 58.8013
+it: 400/80000, lr: 0.000157, loss: 7.1859, eta: 17:44:22, time: 66.4273
+it: 500/80000, lr: 0.000314, loss: 5.6811, eta: 16:41:44, time: 57.1455
+it: 600/80000, lr: 0.000627, loss: 4.7305, eta: 15:59:31, time: 57.0608
+it: 700/80000, lr: 0.001250, loss: 4.5955, eta: 15:28:10, time: 56.5668
+it: 800/80000, lr: 0.002495, loss: 4.3693, eta: 15:17:20, time: 64.3810
+it: 900/80000, lr: 0.004977, loss: 4.1937, eta: 14:56:34, time: 56.1223
+it: 1000/80000, lr: 0.009931, loss: 4.0907, eta: 14:39:55, time: 56.2326
+==> warmup done, start to implement poly lr strategy
+==> warmup done, start to implement poly lr strategy
+it: 1100/80000, lr: 0.009989, loss: 4.0566, eta: 14:28:14, time: 58.0005
+it: 1200/80000, lr: 0.009977, loss: 3.9318, eta: 14:25:33, time: 64.5796
+it: 1300/80000, lr: 0.009966, loss: 3.7806, eta: 14:14:31, time: 56.0566
+it: 1400/80000, lr: 0.009955, loss: 3.8623, eta: 14:05:01, time: 56.1756
+it: 1500/80000, lr: 0.009943, loss: 3.8148, eta: 14:03:17, time: 63.7357
+it: 1600/80000, lr: 0.009932, loss: 3.9274, eta: 13:55:21, time: 56.0631
+it: 1700/80000, lr: 0.009920, loss: 3.7061, eta: 13:48:14, time: 56.0565
+it: 1800/80000, lr: 0.009909, loss: 3.7626, eta: 13:43:48, time: 58.8151
+it: 1900/80000, lr: 0.009898, loss: 3.6886, eta: 13:43:54, time: 64.8801
+it: 2000/80000, lr: 0.009886, loss: 3.7337, eta: 13:38:09, time: 56.0899
+it: 2100/80000, lr: 0.009875, loss: 3.7002, eta: 13:32:48, time: 55.9609
+it: 2200/80000, lr: 0.009863, loss: 3.5839, eta: 13:27:53, time: 56.0317
+it: 2300/80000, lr: 0.009852, loss: 3.7717, eta: 13:30:14, time: 68.3166
+it: 2400/80000, lr: 0.009840, loss: 3.6238, eta: 13:25:42, time: 56.0968
+it: 2500/80000, lr: 0.009829, loss: 3.5807, eta: 13:21:17, time: 55.7593
+it: 2600/80000, lr: 0.009818, loss: 3.6333, eta: 13:19:33, time: 60.6408
+it: 2700/80000, lr: 0.009806, loss: 3.6697, eta: 13:21:56, time: 69.1338
+it: 2800/80000, lr: 0.009795, loss: 3.6347, eta: 13:18:14, time: 56.4365
+it: 2900/80000, lr: 0.009783, loss: 3.6389, eta: 13:14:45, time: 56.5393
+it: 3000/80000, lr: 0.009772, loss: 3.6188, eta: 13:17:18, time: 70.2217
+it: 3100/80000, lr: 0.009761, loss: 3.5602, eta: 13:13:58, time: 56.5731
+it: 3200/80000, lr: 0.009749, loss: 3.5189, eta: 13:10:50, time: 56.6943
+it: 3300/80000, lr: 0.009738, loss: 3.5535, eta: 13:10:43, time: 64.1299
+it: 3400/80000, lr: 0.009726, loss: 3.5587, eta: 13:12:54, time: 70.4227
+it: 3500/80000, lr: 0.009715, loss: 3.4809, eta: 13:09:58, time: 56.9037
+it: 3600/80000, lr: 0.009703, loss: 3.6193, eta: 13:07:08, time: 56.8307
+it: 3700/80000, lr: 0.009692, loss: 3.4578, eta: 13:04:25, time: 56.9511
+it: 3800/80000, lr: 0.009681, loss: 3.5869, eta: 13:06:32, time: 71.0907
+it: 3900/80000, lr: 0.009669, loss: 3.5842, eta: 13:03:57, time: 57.1305
+it: 4000/80000, lr: 0.009658, loss: 3.6570, eta: 13:03:51, time: 64.7374
+it: 4100/80000, lr: 0.009646, loss: 3.4711, eta: 13:05:42, time: 71.2375
+it: 4200/80000, lr: 0.009635, loss: 3.4439, eta: 13:03:15, time: 57.3922
+it: 4300/80000, lr: 0.009623, loss: 3.4741, eta: 13:00:47, time: 57.1463
+it: 4400/80000, lr: 0.009612, loss: 3.5307, eta: 12:58:25, time: 57.2033
+it: 4500/80000, lr: 0.009600, loss: 3.4943, eta: 13:00:01, time: 71.2012
+it: 4600/80000, lr: 0.009589, loss: 3.4441, eta: 12:57:38, time: 57.0560
+it: 4700/80000, lr: 0.009578, loss: 3.4027, eta: 12:55:13, time: 56.6410
+it: 4800/80000, lr: 0.009566, loss: 3.4601, eta: 12:55:07, time: 65.3506
+it: 4900/80000, lr: 0.009555, loss: 3.4534, eta: 12:56:20, time: 70.6440
+it: 5000/80000, lr: 0.009543, loss: 3.6709, eta: 12:54:04, time: 57.0801
+it: 5100/80000, lr: 0.009532, loss: 3.5397, eta: 12:51:52, time: 57.1635
+it: 5200/80000, lr: 0.009520, loss: 3.5136, eta: 12:49:38, time: 56.7997
+it: 5300/80000, lr: 0.009509, loss: 3.5657, eta: 12:50:52, time: 71.3946
+it: 5400/80000, lr: 0.009497, loss: 3.6117, eta: 12:48:38, time: 56.7183
+it: 5500/80000, lr: 0.009486, loss: 3.4677, eta: 12:48:24, time: 65.2965
+it: 5600/80000, lr: 0.009475, loss: 3.3732, eta: 12:49:18, time: 70.6307
+it: 5700/80000, lr: 0.009463, loss: 3.4698, eta: 12:47:15, time: 57.3637
+it: 5800/80000, lr: 0.009452, loss: 3.4848, eta: 12:45:10, time: 57.0219
+it: 5900/80000, lr: 0.009440, loss: 3.4422, eta: 12:43:09, time: 57.1867
+it: 6000/80000, lr: 0.009429, loss: 3.4309, eta: 12:43:58, time: 70.7830
+it: 6100/80000, lr: 0.009417, loss: 3.3743, eta: 12:41:53, time: 56.7450
+it: 6200/80000, lr: 0.009406, loss: 3.4176, eta: 12:41:18, time: 64.0932
+it: 6300/80000, lr: 0.009394, loss: 3.4605, eta: 12:39:16, time: 56.7785
+it: 6400/80000, lr: 0.009383, loss: 3.5055, eta: 12:39:55, time: 70.5354
+it: 6500/80000, lr: 0.009371, loss: 3.4003, eta: 12:37:56, time: 56.9250
+it: 6600/80000, lr: 0.009360, loss: 3.4426, eta: 12:36:02, time: 57.1542
+it: 6700/80000, lr: 0.009348, loss: 3.3673, eta: 12:36:32, time: 70.2390
+it: 6800/80000, lr: 0.009337, loss: 3.5681, eta: 12:34:37, time: 56.9483
+it: 6900/80000, lr: 0.009325, loss: 3.5475, eta: 12:33:49, time: 63.2271
+it: 7000/80000, lr: 0.009314, loss: 3.4514, eta: 12:31:53, time: 56.6476
+it: 7100/80000, lr: 0.009302, loss: 3.3704, eta: 12:32:22, time: 70.6596
+it: 7200/80000, lr: 0.009291, loss: 3.4770, eta: 12:30:29, time: 56.8355
+it: 7300/80000, lr: 0.009279, loss: 3.3567, eta: 12:28:38, time: 56.9013
+it: 7400/80000, lr: 0.009268, loss: 3.4235, eta: 12:26:51, time: 57.1781
+it: 7500/80000, lr: 0.009256, loss: 3.4047, eta: 12:26:59, time: 68.9564
+it: 7600/80000, lr: 0.009245, loss: 3.3467, eta: 12:25:56, time: 61.6832
+it: 7700/80000, lr: 0.009233, loss: 3.4176, eta: 12:24:19, time: 58.1076
+it: 7800/80000, lr: 0.009222, loss: 3.3979, eta: 12:22:27, time: 56.2873
+it: 7900/80000, lr: 0.009210, loss: 3.4612, eta: 12:22:47, time: 70.7109
+it: 8000/80000, lr: 0.009199, loss: 3.4454, eta: 12:21:01, time: 56.9346
+it: 8100/80000, lr: 0.009187, loss: 3.3158, eta: 12:19:17, time: 56.9285
+it: 8200/80000, lr: 0.009176, loss: 3.4497, eta: 12:19:36, time: 70.9529
+it: 8300/80000, lr: 0.009164, loss: 3.3547, eta: 12:17:49, time: 56.4870
+it: 8400/80000, lr: 0.009153, loss: 3.4327, eta: 12:17:20, time: 65.6049
+it: 8500/80000, lr: 0.009141, loss: 3.4140, eta: 12:15:40, time: 57.2183
+it: 8600/80000, lr: 0.009130, loss: 3.4697, eta: 12:15:56, time: 71.1851
+it: 8700/80000, lr: 0.009118, loss: 3.4662, eta: 12:14:16, time: 57.1829
+it: 8800/80000, lr: 0.009107, loss: 3.4395, eta: 12:12:38, time: 57.3405
+it: 8900/80000, lr: 0.009095, loss: 3.3639, eta: 12:11:01, time: 57.2592
+it: 9000/80000, lr: 0.009084, loss: 3.5128, eta: 12:11:11, time: 70.7804
+it: 9100/80000, lr: 0.009072, loss: 3.3802, eta: 12:10:22, time: 63.4495
+it: 9200/80000, lr: 0.009061, loss: 3.3774, eta: 12:08:37, time: 56.1890
+it: 9300/80000, lr: 0.009049, loss: 3.2916, eta: 12:06:50, time: 55.8539
+it: 9400/80000, lr: 0.009038, loss: 3.3089, eta: 12:06:01, time: 63.2460
+it: 9500/80000, lr: 0.009026, loss: 3.5070, eta: 12:04:15, time: 55.8214
+it: 9600/80000, lr: 0.009015, loss: 3.3192, eta: 12:02:31, time: 55.8393
+it: 9700/80000, lr: 0.009003, loss: 3.3163, eta: 12:01:40, time: 63.0911
+it: 9800/80000, lr: 0.008992, loss: 3.4200, eta: 12:00:13, time: 58.0318
+it: 9900/80000, lr: 0.008980, loss: 3.4766, eta: 11:58:32, time: 55.9074
+it: 10000/80000, lr: 0.008969, loss: 3.3791, eta: 11:56:49, time: 55.6777
+it: 10100/80000, lr: 0.008957, loss: 3.4793, eta: 11:56:06, time: 64.0229
+it: 10200/80000, lr: 0.008946, loss: 3.3959, eta: 11:54:26, time: 55.8521
+it: 10300/80000, lr: 0.008934, loss: 3.3594, eta: 11:52:46, time: 55.7674
+it: 10400/80000, lr: 0.008923, loss: 3.3972, eta: 11:51:08, time: 55.8812
+it: 10500/80000, lr: 0.008911, loss: 3.3997, eta: 11:50:29, time: 64.6218
+it: 10600/80000, lr: 0.008899, loss: 3.4499, eta: 11:49:12, time: 58.8833
+it: 10700/80000, lr: 0.008888, loss: 3.3698, eta: 11:47:36, time: 55.9710
+it: 10800/80000, lr: 0.008876, loss: 3.4043, eta: 11:47:07, time: 66.3425
+it: 10900/80000, lr: 0.008865, loss: 3.3347, eta: 11:45:32, time: 55.9749
+it: 11000/80000, lr: 0.008853, loss: 3.3984, eta: 11:43:58, time: 56.1268
+it: 11100/80000, lr: 0.008842, loss: 3.2858, eta: 11:42:25, time: 55.9702
+it: 11200/80000, lr: 0.008830, loss: 3.4283, eta: 11:42:14, time: 69.3254
+it: 11300/80000, lr: 0.008819, loss: 3.4088, eta: 11:41:18, time: 62.1402
+it: 11400/80000, lr: 0.008807, loss: 3.4039, eta: 11:39:49, time: 56.6128
+it: 11500/80000, lr: 0.008796, loss: 3.3916, eta: 11:38:20, time: 56.5840
+it: 11600/80000, lr: 0.008784, loss: 3.3760, eta: 11:38:13, time: 70.3801
+it: 11700/80000, lr: 0.008772, loss: 3.3489, eta: 11:36:47, time: 56.9436
+it: 11800/80000, lr: 0.008761, loss: 3.2977, eta: 11:35:21, time: 57.0176
+it: 11900/80000, lr: 0.008749, loss: 3.4121, eta: 11:33:55, time: 56.7126
+it: 12000/80000, lr: 0.008738, loss: 3.3256, eta: 11:34:20, time: 76.3867
+it: 12100/80000, lr: 0.008726, loss: 3.4119, eta: 11:32:56, time: 57.2577
+it: 12200/80000, lr: 0.008715, loss: 3.4495, eta: 11:31:32, time: 57.0637
+it: 12300/80000, lr: 0.008703, loss: 3.2626, eta: 11:31:24, time: 70.9796
+it: 12400/80000, lr: 0.008691, loss: 3.2432, eta: 11:30:02, time: 57.4108
+it: 12500/80000, lr: 0.008680, loss: 3.3492, eta: 11:28:39, time: 57.1875
+it: 12600/80000, lr: 0.008668, loss: 3.4034, eta: 11:27:18, time: 57.6411
+it: 12700/80000, lr: 0.008657, loss: 3.3616, eta: 11:27:29, time: 74.7145
+it: 12800/80000, lr: 0.008645, loss: 3.2624, eta: 11:26:07, time: 57.3834
+it: 12900/80000, lr: 0.008634, loss: 3.4344, eta: 11:24:44, time: 57.1261
+it: 13000/80000, lr: 0.008622, loss: 3.3685, eta: 11:23:21, time: 56.9330
+it: 13100/80000, lr: 0.008610, loss: 3.2692, eta: 11:23:12, time: 71.3573
+it: 13200/80000, lr: 0.008599, loss: 3.3481, eta: 11:21:51, time: 57.4291
+it: 13300/80000, lr: 0.008587, loss: 3.3635, eta: 11:20:29, time: 57.1598
+it: 13400/80000, lr: 0.008576, loss: 3.3176, eta: 11:19:59, time: 67.3939
+it: 13500/80000, lr: 0.008564, loss: 3.2586, eta: 11:19:19, time: 65.7034
+it: 13600/80000, lr: 0.008552, loss: 3.3499, eta: 11:17:58, time: 57.0900
+it: 13700/80000, lr: 0.008541, loss: 3.3787, eta: 11:16:37, time: 57.1581
+it: 13800/80000, lr: 0.008529, loss: 3.3321, eta: 11:17:07, time: 80.2884
+it: 13900/80000, lr: 0.008518, loss: 3.3168, eta: 11:15:39, time: 55.8395
+it: 14000/80000, lr: 0.008506, loss: 3.3328, eta: 11:14:12, time: 55.8162
+it: 14100/80000, lr: 0.008495, loss: 3.2973, eta: 11:12:45, time: 55.8008
+it: 14200/80000, lr: 0.008483, loss: 3.3546, eta: 11:12:13, time: 67.6319
+it: 14300/80000, lr: 0.008471, loss: 3.3093, eta: 11:10:45, time: 55.5501
+it: 14400/80000, lr: 0.008460, loss: 3.3165, eta: 11:09:19, time: 55.6737
+it: 14500/80000, lr: 0.008448, loss: 3.5129, eta: 11:07:52, time: 55.4937
+it: 14600/80000, lr: 0.008436, loss: 3.2834, eta: 11:07:09, time: 65.2985
+it: 14700/80000, lr: 0.008425, loss: 3.3091, eta: 11:05:43, time: 55.6984
+it: 14800/80000, lr: 0.008413, loss: 3.2622, eta: 11:04:18, time: 55.6056
+it: 14900/80000, lr: 0.008402, loss: 3.3253, eta: 11:04:04, time: 72.0380
+it: 15000/80000, lr: 0.008390, loss: 3.3045, eta: 11:02:40, time: 55.8982
+it: 15100/80000, lr: 0.008378, loss: 3.4190, eta: 11:01:16, time: 55.9065
+it: 15200/80000, lr: 0.008367, loss: 3.3909, eta: 10:59:53, time: 56.0218
+it: 15300/80000, lr: 0.008355, loss: 3.2960, eta: 10:59:25, time: 68.8115
+it: 15400/80000, lr: 0.008344, loss: 3.3640, eta: 10:58:04, time: 56.4509
+it: 15500/80000, lr: 0.008332, loss: 3.3328, eta: 10:56:41, time: 56.0107
+it: 15600/80000, lr: 0.008320, loss: 3.4196, eta: 10:55:20, time: 56.1345
+it: 15700/80000, lr: 0.008309, loss: 3.2762, eta: 10:55:24, time: 77.0154
+it: 15800/80000, lr: 0.008297, loss: 3.3776, eta: 10:54:03, time: 56.3355
+it: 15900/80000, lr: 0.008285, loss: 3.2360, eta: 10:52:44, time: 56.6145
+it: 16000/80000, lr: 0.008274, loss: 3.2447, eta: 10:52:07, time: 67.0572
+it: 16100/80000, lr: 0.008262, loss: 3.3275, eta: 10:51:00, time: 59.5847
+it: 16200/80000, lr: 0.008251, loss: 3.2705, eta: 10:49:41, time: 56.6953
+it: 16300/80000, lr: 0.008239, loss: 3.2994, eta: 10:48:22, time: 56.5787
+it: 16400/80000, lr: 0.008227, loss: 3.1762, eta: 10:48:11, time: 74.0484
+it: 16500/80000, lr: 0.008216, loss: 3.3071, eta: 10:46:54, time: 56.9096
+it: 16600/80000, lr: 0.008204, loss: 3.2822, eta: 10:45:37, time: 56.9744
+it: 16700/80000, lr: 0.008192, loss: 3.4104, eta: 10:44:20, time: 56.9210
+it: 16800/80000, lr: 0.008181, loss: 3.2998, eta: 10:43:55, time: 70.5348
+it: 16900/80000, lr: 0.008169, loss: 3.3384, eta: 10:42:38, time: 57.0837
+it: 17000/80000, lr: 0.008157, loss: 3.3920, eta: 10:41:22, time: 56.9947
+it: 17100/80000, lr: 0.008146, loss: 3.3505, eta: 10:40:29, time: 63.2220
+it: 17200/80000, lr: 0.008134, loss: 3.2828, eta: 10:40:05, time: 71.1748
+it: 17300/80000, lr: 0.008122, loss: 3.3028, eta: 10:38:48, time: 56.8972
+it: 17400/80000, lr: 0.008111, loss: 3.2387, eta: 10:37:32, time: 57.0154
+it: 17500/80000, lr: 0.008099, loss: 3.3350, eta: 10:37:05, time: 70.7027
+it: 17600/80000, lr: 0.008087, loss: 3.3534, eta: 10:35:49, time: 56.9182
+it: 17700/80000, lr: 0.008076, loss: 3.4408, eta: 10:34:33, time: 57.0276
+it: 17800/80000, lr: 0.008064, loss: 3.3542, eta: 10:33:21, time: 57.9067
+it: 17900/80000, lr: 0.008052, loss: 3.3177, eta: 10:33:19, time: 78.0112
+it: 18000/80000, lr: 0.008041, loss: 3.2486, eta: 10:32:02, time: 56.6723
+it: 18100/80000, lr: 0.008029, loss: 3.3366, eta: 10:30:47, time: 57.0006
+it: 18200/80000, lr: 0.008017, loss: 3.2600, eta: 10:29:31, time: 56.8847
+it: 18300/80000, lr: 0.008006, loss: 3.2987, eta: 10:29:01, time: 70.3702
+it: 18400/80000, lr: 0.007994, loss: 3.2693, eta: 10:27:46, time: 56.9666
+it: 18500/80000, lr: 0.007982, loss: 3.2370, eta: 10:26:29, time: 56.3092
+it: 18600/80000, lr: 0.007971, loss: 3.3311, eta: 10:25:39, time: 64.6923
+it: 18700/80000, lr: 0.007959, loss: 3.2907, eta: 10:25:10, time: 70.8046
+it: 18800/80000, lr: 0.007947, loss: 3.3758, eta: 10:23:54, time: 56.8139
+it: 18900/80000, lr: 0.007936, loss: 3.2219, eta: 10:22:38, time: 56.6273
+it: 19000/80000, lr: 0.007924, loss: 3.3071, eta: 10:22:08, time: 70.8207
+it: 19100/80000, lr: 0.007912, loss: 3.2557, eta: 10:20:54, time: 57.0386
+it: 19200/80000, lr: 0.007901, loss: 3.3339, eta: 10:19:39, time: 56.6952
+it: 19300/80000, lr: 0.007889, loss: 3.3164, eta: 10:18:46, time: 63.8024
+it: 19400/80000, lr: 0.007877, loss: 3.3640, eta: 10:18:13, time: 70.3823
+it: 19500/80000, lr: 0.007865, loss: 3.2576, eta: 10:16:59, time: 56.8453
+it: 19600/80000, lr: 0.007854, loss: 3.2391, eta: 10:15:44, time: 56.9513
+it: 19700/80000, lr: 0.007842, loss: 3.2992, eta: 10:14:29, time: 56.4959
+it: 19800/80000, lr: 0.007830, loss: 3.2494, eta: 10:13:57, time: 70.7738
+it: 19900/80000, lr: 0.007819, loss: 3.3192, eta: 10:12:43, time: 56.7795
+it: 20000/80000, lr: 0.007807, loss: 3.2437, eta: 10:11:36, time: 59.1976
+it: 20100/80000, lr: 0.007795, loss: 3.4632, eta: 10:11:19, time: 76.0346
+it: 20200/80000, lr: 0.007783, loss: 3.3310, eta: 10:10:04, time: 56.6989
+it: 20300/80000, lr: 0.007772, loss: 3.2537, eta: 10:08:50, time: 56.7206
+it: 20400/80000, lr: 0.007760, loss: 3.3163, eta: 10:07:35, time: 56.7194
+it: 20500/80000, lr: 0.007748, loss: 3.3360, eta: 10:07:00, time: 70.1114
+it: 20600/80000, lr: 0.007737, loss: 3.3637, eta: 10:05:46, time: 56.7734
+it: 20700/80000, lr: 0.007725, loss: 3.2189, eta: 10:04:31, time: 56.2900
+it: 20800/80000, lr: 0.007713, loss: 3.4577, eta: 10:03:42, time: 65.3803
+it: 20900/80000, lr: 0.007701, loss: 3.2483, eta: 10:03:07, time: 70.4540
+it: 21000/80000, lr: 0.007690, loss: 3.3406, eta: 10:01:53, time: 56.7791
+it: 21100/80000, lr: 0.007678, loss: 3.2818, eta: 10:00:39, time: 56.5027
+it: 21200/80000, lr: 0.007666, loss: 3.2383, eta: 9:59:24, time: 56.4668
+it: 21300/80000, lr: 0.007654, loss: 3.2716, eta: 9:58:50, time: 70.8526
+it: 21400/80000, lr: 0.007643, loss: 3.2851, eta: 9:57:36, time: 56.6610
+it: 21500/80000, lr: 0.007631, loss: 3.3429, eta: 9:56:45, time: 64.7330
+it: 21600/80000, lr: 0.007619, loss: 3.3191, eta: 9:56:09, time: 70.5023
+it: 21700/80000, lr: 0.007608, loss: 3.2413, eta: 9:54:56, time: 56.9144
+it: 21800/80000, lr: 0.007596, loss: 3.2677, eta: 9:53:42, time: 56.5977
+it: 21900/80000, lr: 0.007584, loss: 3.2759, eta: 9:52:29, time: 56.5052
+it: 22000/80000, lr: 0.007572, loss: 3.2442, eta: 9:51:52, time: 70.6011
+it: 22100/80000, lr: 0.007561, loss: 3.3360, eta: 9:50:39, time: 56.8333
+it: 22200/80000, lr: 0.007549, loss: 3.2621, eta: 9:49:46, time: 64.1952
+it: 22300/80000, lr: 0.007537, loss: 3.3797, eta: 9:48:35, time: 57.3560
+it: 22400/80000, lr: 0.007525, loss: 3.2339, eta: 9:47:59, time: 70.9929
+it: 22500/80000, lr: 0.007514, loss: 3.3697, eta: 9:46:47, time: 57.1226
+it: 22600/80000, lr: 0.007502, loss: 3.3034, eta: 9:45:34, time: 56.7218
+it: 22700/80000, lr: 0.007490, loss: 3.2574, eta: 9:44:58, time: 71.1427
+it: 22800/80000, lr: 0.007478, loss: 3.2173, eta: 9:43:45, time: 56.5530
+it: 22900/80000, lr: 0.007466, loss: 3.2685, eta: 9:42:31, time: 55.8883
+it: 23000/80000, lr: 0.007455, loss: 3.3149, eta: 9:41:40, time: 65.6227
+it: 23100/80000, lr: 0.007443, loss: 3.3108, eta: 9:41:02, time: 70.7112
+it: 23200/80000, lr: 0.007431, loss: 3.3445, eta: 9:39:50, time: 56.8064
+it: 23300/80000, lr: 0.007419, loss: 3.2311, eta: 9:38:38, time: 56.8606
+it: 23400/80000, lr: 0.007408, loss: 3.3765, eta: 9:37:26, time: 56.6894
+it: 23500/80000, lr: 0.007396, loss: 3.2384, eta: 9:36:48, time: 70.8420
+it: 23600/80000, lr: 0.007384, loss: 3.2615, eta: 9:35:36, time: 56.9165
+it: 23700/80000, lr: 0.007372, loss: 3.2870, eta: 9:34:44, time: 65.0920
+it: 23800/80000, lr: 0.007360, loss: 3.3408, eta: 9:33:31, time: 56.1397
+it: 23900/80000, lr: 0.007349, loss: 3.2997, eta: 9:32:53, time: 71.1201
+it: 24000/80000, lr: 0.007337, loss: 3.2342, eta: 9:31:41, time: 56.6156
+it: 24100/80000, lr: 0.007325, loss: 3.2792, eta: 9:30:29, time: 56.7640
+it: 24200/80000, lr: 0.007313, loss: 3.3149, eta: 9:29:49, time: 70.4131
+it: 24300/80000, lr: 0.007302, loss: 3.2584, eta: 9:28:38, time: 56.8518
+it: 24400/80000, lr: 0.007290, loss: 3.2510, eta: 9:27:44, time: 64.7285
+it: 24500/80000, lr: 0.007278, loss: 3.2885, eta: 9:26:33, time: 56.7407
+it: 24600/80000, lr: 0.007266, loss: 3.2401, eta: 9:25:52, time: 70.2088
+it: 24700/80000, lr: 0.007254, loss: 3.2654, eta: 9:24:40, time: 56.6132
+it: 24800/80000, lr: 0.007242, loss: 3.3717, eta: 9:23:29, time: 56.8077
+it: 24900/80000, lr: 0.007231, loss: 3.2519, eta: 9:22:17, time: 56.5878
+it: 25000/80000, lr: 0.007219, loss: 3.3397, eta: 9:21:37, time: 70.8140
+it: 25100/80000, lr: 0.007207, loss: 3.2368, eta: 9:20:26, time: 56.6905
+it: 25200/80000, lr: 0.007195, loss: 3.2025, eta: 9:19:31, time: 64.0588
+it: 25300/80000, lr: 0.007183, loss: 3.2950, eta: 9:18:49, time: 70.3051
+it: 25400/80000, lr: 0.007172, loss: 3.2530, eta: 9:17:39, time: 57.3693
+it: 25500/80000, lr: 0.007160, loss: 3.2766, eta: 9:16:29, time: 56.9388
+it: 25600/80000, lr: 0.007148, loss: 3.1939, eta: 9:15:18, time: 56.7007
+it: 25700/80000, lr: 0.007136, loss: 3.2890, eta: 9:14:36, time: 70.5917
+it: 25800/80000, lr: 0.007124, loss: 3.1625, eta: 9:13:24, time: 56.1215
+it: 25900/80000, lr: 0.007112, loss: 3.2194, eta: 9:12:32, time: 65.5020
+it: 26000/80000, lr: 0.007101, loss: 3.2654, eta: 9:11:21, time: 56.8292
+it: 26100/80000, lr: 0.007089, loss: 3.3329, eta: 9:10:39, time: 70.4661
+it: 26200/80000, lr: 0.007077, loss: 3.2302, eta: 9:09:28, time: 56.7664
+it: 26300/80000, lr: 0.007065, loss: 3.2593, eta: 9:08:18, time: 56.8218
+it: 26400/80000, lr: 0.007053, loss: 3.3151, eta: 9:07:07, time: 56.2021
+it: 26500/80000, lr: 0.007041, loss: 3.2151, eta: 9:06:25, time: 70.8477
+it: 26600/80000, lr: 0.007030, loss: 3.2011, eta: 9:05:30, time: 64.6259
+it: 26700/80000, lr: 0.007018, loss: 3.2402, eta: 9:04:20, time: 56.6542
+it: 26800/80000, lr: 0.007006, loss: 3.2292, eta: 9:03:37, time: 70.8167
+it: 26900/80000, lr: 0.006994, loss: 3.2483, eta: 9:02:27, time: 56.8043
+it: 27000/80000, lr: 0.006982, loss: 3.2862, eta: 9:01:17, time: 56.7045
+it: 27100/80000, lr: 0.006970, loss: 3.2567, eta: 9:00:07, time: 56.7139
+it: 27200/80000, lr: 0.006958, loss: 3.2772, eta: 8:59:24, time: 70.7187
+it: 27300/80000, lr: 0.006947, loss: 3.1923, eta: 8:58:28, time: 64.1070
+it: 27400/80000, lr: 0.006935, loss: 3.1838, eta: 8:57:18, time: 56.7962
+it: 27500/80000, lr: 0.006923, loss: 3.1931, eta: 8:56:08, time: 56.9365
+it: 27600/80000, lr: 0.006911, loss: 3.1431, eta: 8:55:24, time: 70.3616
+it: 27700/80000, lr: 0.006899, loss: 3.2211, eta: 8:54:15, time: 56.9777
+it: 27800/80000, lr: 0.006887, loss: 3.2894, eta: 8:53:05, time: 56.8210
+it: 27900/80000, lr: 0.006875, loss: 3.2716, eta: 8:51:54, time: 56.2539
+it: 28000/80000, lr: 0.006864, loss: 3.2804, eta: 8:51:10, time: 70.5364
+it: 28100/80000, lr: 0.006852, loss: 3.2083, eta: 8:50:15, time: 64.5537
+it: 28200/80000, lr: 0.006840, loss: 3.2043, eta: 8:49:06, time: 56.8126
+it: 28300/80000, lr: 0.006828, loss: 3.1497, eta: 8:48:20, time: 70.1529
+it: 28400/80000, lr: 0.006816, loss: 3.1574, eta: 8:47:11, time: 56.8849
+it: 28500/80000, lr: 0.006804, loss: 3.1823, eta: 8:46:02, time: 56.9494
+it: 28600/80000, lr: 0.006792, loss: 3.1675, eta: 8:44:52, time: 56.7172
+it: 28700/80000, lr: 0.006780, loss: 3.2523, eta: 8:44:08, time: 70.5324
+it: 28800/80000, lr: 0.006768, loss: 3.1327, eta: 8:43:13, time: 65.1767
+it: 28900/80000, lr: 0.006757, loss: 3.2621, eta: 8:42:04, time: 56.9695
+it: 29000/80000, lr: 0.006745, loss: 3.2805, eta: 8:40:55, time: 56.4776
+it: 29100/80000, lr: 0.006733, loss: 3.3090, eta: 8:40:10, time: 70.6820
+it: 29200/80000, lr: 0.006721, loss: 3.1509, eta: 8:39:00, time: 56.6049
+it: 29300/80000, lr: 0.006709, loss: 3.2061, eta: 8:37:51, time: 56.7343
+it: 29400/80000, lr: 0.006697, loss: 3.1595, eta: 8:37:05, time: 70.2899
+it: 29500/80000, lr: 0.006685, loss: 3.2359, eta: 8:36:10, time: 64.9116
+it: 29600/80000, lr: 0.006673, loss: 3.2672, eta: 8:35:01, time: 56.9098
+it: 29700/80000, lr: 0.006661, loss: 3.3376, eta: 8:33:52, time: 56.8435
+it: 29800/80000, lr: 0.006649, loss: 3.1815, eta: 8:33:06, time: 70.0577
+it: 29900/80000, lr: 0.006637, loss: 3.2252, eta: 8:31:57, time: 56.7542
+it: 30000/80000, lr: 0.006625, loss: 3.1761, eta: 8:30:47, time: 56.5067
+it: 30100/80000, lr: 0.006614, loss: 3.2899, eta: 8:29:39, time: 56.9379
+it: 30200/80000, lr: 0.006602, loss: 3.2707, eta: 8:28:54, time: 71.0257
+it: 30300/80000, lr: 0.006590, loss: 3.1283, eta: 8:27:55, time: 62.6287
+it: 30400/80000, lr: 0.006578, loss: 3.2515, eta: 8:26:46, time: 56.6007
+it: 30500/80000, lr: 0.006566, loss: 3.2803, eta: 8:25:36, time: 56.3273
+it: 30600/80000, lr: 0.006554, loss: 3.2066, eta: 8:24:50, time: 70.7481
+it: 30700/80000, lr: 0.006542, loss: 3.2046, eta: 8:23:42, time: 56.7164
+it: 30800/80000, lr: 0.006530, loss: 3.2207, eta: 8:22:33, time: 56.6543
+it: 30900/80000, lr: 0.006518, loss: 3.2810, eta: 8:21:40, time: 66.9163
+it: 31000/80000, lr: 0.006506, loss: 3.2062, eta: 8:20:45, time: 65.1110
+it: 31100/80000, lr: 0.006494, loss: 3.1883, eta: 8:19:37, time: 56.7817
+it: 31200/80000, lr: 0.006482, loss: 3.1803, eta: 8:18:28, time: 56.7971
+it: 31300/80000, lr: 0.006470, loss: 3.2076, eta: 8:17:41, time: 70.3430
+it: 31400/80000, lr: 0.006458, loss: 3.2087, eta: 8:16:33, time: 56.8191
+it: 31500/80000, lr: 0.006446, loss: 3.0988, eta: 8:15:25, time: 57.1155
+it: 31600/80000, lr: 0.006434, loss: 3.3618, eta: 8:14:16, time: 56.4367
+it: 31700/80000, lr: 0.006422, loss: 3.2478, eta: 8:13:39, time: 76.9596
+it: 31800/80000, lr: 0.006410, loss: 3.2038, eta: 8:12:31, time: 56.7613
+it: 31900/80000, lr: 0.006398, loss: 3.1895, eta: 8:11:23, time: 56.6681
+it: 32000/80000, lr: 0.006386, loss: 3.1335, eta: 8:10:35, time: 70.2744
+it: 32100/80000, lr: 0.006374, loss: 3.1945, eta: 8:09:27, time: 56.7617
+it: 32200/80000, lr: 0.006363, loss: 3.1252, eta: 8:08:18, time: 56.6042
+it: 32300/80000, lr: 0.006351, loss: 3.1626, eta: 8:07:10, time: 56.5583
+it: 32400/80000, lr: 0.006339, loss: 3.3116, eta: 8:06:27, time: 73.3999
+it: 32500/80000, lr: 0.006327, loss: 3.1626, eta: 8:05:21, time: 58.2559
+it: 32600/80000, lr: 0.006315, loss: 3.1534, eta: 8:04:13, time: 56.5595
+it: 32700/80000, lr: 0.006303, loss: 3.2212, eta: 8:03:05, time: 56.7776
+it: 32800/80000, lr: 0.006291, loss: 3.1703, eta: 8:02:17, time: 70.5278
+it: 32900/80000, lr: 0.006279, loss: 3.1345, eta: 8:01:10, time: 57.2543
+it: 33000/80000, lr: 0.006267, loss: 3.2642, eta: 8:00:02, time: 57.1505
+it: 33100/80000, lr: 0.006255, loss: 3.1345, eta: 7:58:54, time: 56.3390
+it: 33200/80000, lr: 0.006243, loss: 3.1690, eta: 7:58:15, time: 76.7984
+it: 33300/80000, lr: 0.006231, loss: 3.1799, eta: 7:57:08, time: 57.2137
+it: 33400/80000, lr: 0.006219, loss: 3.1475, eta: 7:56:01, time: 57.2630
+it: 33500/80000, lr: 0.006207, loss: 3.2090, eta: 7:55:15, time: 72.1219
+it: 33600/80000, lr: 0.006195, loss: 3.2417, eta: 7:54:07, time: 57.0274
+it: 33700/80000, lr: 0.006183, loss: 3.1557, eta: 7:53:00, time: 57.0462
+it: 33800/80000, lr: 0.006171, loss: 3.0987, eta: 7:51:53, time: 56.9883
+it: 33900/80000, lr: 0.006158, loss: 3.2333, eta: 7:51:14, time: 77.6714
+it: 34000/80000, lr: 0.006146, loss: 3.2224, eta: 7:50:06, time: 56.6161
+it: 34100/80000, lr: 0.006134, loss: 3.1927, eta: 7:48:59, time: 56.7345
+it: 34200/80000, lr: 0.006122, loss: 3.1754, eta: 7:47:51, time: 56.7398
+it: 34300/80000, lr: 0.006110, loss: 3.2148, eta: 7:47:02, time: 70.2452
+it: 34400/80000, lr: 0.006098, loss: 3.1145, eta: 7:45:54, time: 56.4908
+it: 34500/80000, lr: 0.006086, loss: 3.1524, eta: 7:44:47, time: 56.4732
+it: 34600/80000, lr: 0.006074, loss: 3.1897, eta: 7:44:05, time: 76.2538
+it: 34700/80000, lr: 0.006062, loss: 3.1475, eta: 7:43:00, time: 58.6378
+it: 34800/80000, lr: 0.006050, loss: 3.2275, eta: 7:41:52, time: 56.3908
+it: 34900/80000, lr: 0.006038, loss: 3.1792, eta: 7:40:45, time: 56.4838
+it: 35000/80000, lr: 0.006026, loss: 3.1577, eta: 7:39:55, time: 70.2270
+it: 35100/80000, lr: 0.006014, loss: 3.1457, eta: 7:38:48, time: 56.6841
+it: 35200/80000, lr: 0.006002, loss: 3.1596, eta: 7:37:41, time: 56.8473
+it: 35300/80000, lr: 0.005990, loss: 3.2311, eta: 7:36:33, time: 56.3902
+it: 35400/80000, lr: 0.005978, loss: 3.1453, eta: 7:35:53, time: 77.7549
+it: 35500/80000, lr: 0.005966, loss: 3.1481, eta: 7:34:45, time: 56.5372
+it: 35600/80000, lr: 0.005954, loss: 3.2797, eta: 7:33:38, time: 56.7384
+it: 35700/80000, lr: 0.005942, loss: 3.1250, eta: 7:32:31, time: 56.1576
+it: 35800/80000, lr: 0.005930, loss: 3.1421, eta: 7:31:42, time: 71.3122
+it: 35900/80000, lr: 0.005918, loss: 3.2184, eta: 7:30:35, time: 56.5960
+it: 36000/80000, lr: 0.005905, loss: 3.1298, eta: 7:29:28, time: 56.5968
+it: 36100/80000, lr: 0.005893, loss: 3.1968, eta: 7:28:42, time: 74.4126
+it: 36200/80000, lr: 0.005881, loss: 3.1824, eta: 7:27:35, time: 56.6796
+it: 36300/80000, lr: 0.005869, loss: 3.1331, eta: 7:26:28, time: 56.5452
+it: 36400/80000, lr: 0.005857, loss: 3.1847, eta: 7:25:22, time: 56.8298
+it: 36500/80000, lr: 0.005845, loss: 3.0977, eta: 7:24:31, time: 70.5505
+it: 36600/80000, lr: 0.005833, loss: 3.3031, eta: 7:23:25, time: 56.8549
+it: 36700/80000, lr: 0.005821, loss: 3.2262, eta: 7:22:18, time: 56.4928
+it: 36800/80000, lr: 0.005809, loss: 3.1819, eta: 7:21:11, time: 56.2542
+it: 36900/80000, lr: 0.005797, loss: 3.1030, eta: 7:20:23, time: 73.3535
+it: 37000/80000, lr: 0.005785, loss: 3.1728, eta: 7:19:17, time: 56.5063
+it: 37100/80000, lr: 0.005772, loss: 3.2241, eta: 7:18:10, time: 56.8689
+it: 37200/80000, lr: 0.005760, loss: 3.1614, eta: 7:17:03, time: 56.2947
+it: 37300/80000, lr: 0.005748, loss: 3.2253, eta: 7:16:14, time: 71.5884
+it: 37400/80000, lr: 0.005736, loss: 3.1385, eta: 7:15:07, time: 56.6937
+it: 37500/80000, lr: 0.005724, loss: 3.1667, eta: 7:14:00, time: 56.2804
+it: 37600/80000, lr: 0.005712, loss: 3.1565, eta: 7:13:18, time: 78.2931
+it: 37700/80000, lr: 0.005700, loss: 3.1157, eta: 7:12:11, time: 56.5770
+it: 37800/80000, lr: 0.005688, loss: 3.2448, eta: 7:11:05, time: 56.8612
+it: 37900/80000, lr: 0.005675, loss: 3.1618, eta: 7:09:59, time: 56.9357
+it: 38000/80000, lr: 0.005663, loss: 3.0851, eta: 7:09:08, time: 70.6188
+it: 38100/80000, lr: 0.005651, loss: 3.2002, eta: 7:08:01, time: 56.5117
+it: 38200/80000, lr: 0.005639, loss: 3.1446, eta: 7:06:55, time: 56.3827
+it: 38300/80000, lr: 0.005627, loss: 3.2578, eta: 7:05:57, time: 64.5417
+it: 38400/80000, lr: 0.005615, loss: 3.1964, eta: 7:05:07, time: 71.2078
+it: 38500/80000, lr: 0.005603, loss: 3.1019, eta: 7:04:01, time: 57.1556
+it: 38600/80000, lr: 0.005590, loss: 3.2100, eta: 7:02:55, time: 57.0459
+it: 38700/80000, lr: 0.005578, loss: 3.1826, eta: 7:02:03, time: 70.2631
+it: 38800/80000, lr: 0.005566, loss: 3.1172, eta: 7:00:57, time: 57.1057
+it: 38900/80000, lr: 0.005554, loss: 3.0895, eta: 6:59:52, time: 56.9694
+it: 39000/80000, lr: 0.005542, loss: 3.1345, eta: 6:58:54, time: 64.7165
+it: 39100/80000, lr: 0.005530, loss: 3.1009, eta: 6:58:03, time: 70.9867
+it: 39200/80000, lr: 0.005517, loss: 3.1430, eta: 6:56:56, time: 56.6750
+it: 39300/80000, lr: 0.005505, loss: 3.1837, eta: 6:55:50, time: 56.5417
+it: 39400/80000, lr: 0.005493, loss: 3.2225, eta: 6:54:44, time: 56.6810
+it: 39500/80000, lr: 0.005481, loss: 3.1944, eta: 6:53:52, time: 70.1775
+it: 39600/80000, lr: 0.005469, loss: 3.1444, eta: 6:52:46, time: 56.9170
+it: 39700/80000, lr: 0.005457, loss: 3.2059, eta: 6:51:39, time: 55.8887
+it: 39800/80000, lr: 0.005444, loss: 3.1886, eta: 6:50:42, time: 64.7401
+it: 39900/80000, lr: 0.005432, loss: 3.1217, eta: 6:49:50, time: 70.7825
+it: 40000/80000, lr: 0.005420, loss: 3.1338, eta: 6:48:44, time: 56.6299
+it: 40100/80000, lr: 0.005408, loss: 3.1259, eta: 6:47:38, time: 56.7290
+it: 40200/80000, lr: 0.005396, loss: 3.1184, eta: 6:46:46, time: 70.9615
+it: 40300/80000, lr: 0.005383, loss: 3.1921, eta: 6:45:40, time: 56.7382
+it: 40400/80000, lr: 0.005371, loss: 3.1616, eta: 6:44:34, time: 56.4646
+it: 40500/80000, lr: 0.005359, loss: 3.0807, eta: 6:43:37, time: 65.0821
+it: 40600/80000, lr: 0.005347, loss: 3.1649, eta: 6:42:44, time: 69.8801
+it: 40700/80000, lr: 0.005335, loss: 3.1379, eta: 6:41:38, time: 56.7613
+it: 40800/80000, lr: 0.005322, loss: 3.1285, eta: 6:40:32, time: 56.6942
+it: 40900/80000, lr: 0.005310, loss: 3.1036, eta: 6:39:26, time: 56.4626
+it: 41000/80000, lr: 0.005298, loss: 3.0993, eta: 6:38:34, time: 70.7039
+it: 41100/80000, lr: 0.005286, loss: 3.1377, eta: 6:37:28, time: 56.6964
+it: 41200/80000, lr: 0.005273, loss: 3.1361, eta: 6:36:30, time: 64.2340
+it: 41300/80000, lr: 0.005261, loss: 3.2234, eta: 6:35:36, time: 69.8914
+it: 41400/80000, lr: 0.005249, loss: 3.1654, eta: 6:34:31, time: 57.0567
+it: 41500/80000, lr: 0.005237, loss: 3.1698, eta: 6:33:25, time: 56.4837
+it: 41600/80000, lr: 0.005224, loss: 3.1478, eta: 6:32:20, time: 56.8001
+it: 41700/80000, lr: 0.005212, loss: 3.2127, eta: 6:31:26, time: 69.9801
+it: 41800/80000, lr: 0.005200, loss: 3.1060, eta: 6:30:21, time: 56.7018
+it: 41900/80000, lr: 0.005188, loss: 3.0507, eta: 6:29:15, time: 55.9243
+it: 42000/80000, lr: 0.005175, loss: 3.1405, eta: 6:28:16, time: 64.5742
+it: 42100/80000, lr: 0.005163, loss: 3.1805, eta: 6:27:26, time: 73.3331
+it: 42200/80000, lr: 0.005151, loss: 3.0668, eta: 6:26:26, time: 63.2351
+it: 42300/80000, lr: 0.005139, loss: 3.1360, eta: 6:25:27, time: 63.7573
+it: 42400/80000, lr: 0.005126, loss: 3.1414, eta: 6:24:25, time: 60.8304
+it: 42500/80000, lr: 0.005114, loss: 3.1331, eta: 6:23:39, time: 78.7443
+it: 42600/80000, lr: 0.005102, loss: 3.1487, eta: 6:22:37, time: 60.8601
+it: 42700/80000, lr: 0.005090, loss: 3.1393, eta: 6:21:43, time: 69.4656
+it: 42800/80000, lr: 0.005077, loss: 3.0967, eta: 6:20:55, time: 76.4183
+it: 42900/80000, lr: 0.005065, loss: 3.1288, eta: 6:19:55, time: 63.7766
+it: 43000/80000, lr: 0.005053, loss: 3.1881, eta: 6:18:55, time: 62.7448
+it: 43100/80000, lr: 0.005040, loss: 3.0669, eta: 6:17:54, time: 61.5190
+it: 43200/80000, lr: 0.005028, loss: 3.1999, eta: 6:17:06, time: 77.5426
+it: 43300/80000, lr: 0.005016, loss: 3.0816, eta: 6:16:05, time: 62.5995
+it: 43400/80000, lr: 0.005004, loss: 3.1533, eta: 6:15:05, time: 63.1770
+it: 43500/80000, lr: 0.004991, loss: 3.1599, eta: 6:14:08, time: 67.0183
+it: 43600/80000, lr: 0.004979, loss: 3.1073, eta: 6:13:21, time: 77.7032
+it: 43700/80000, lr: 0.004967, loss: 3.2620, eta: 6:12:19, time: 61.6031
+it: 43800/80000, lr: 0.004954, loss: 3.2595, eta: 6:11:18, time: 62.0676
+it: 43900/80000, lr: 0.004942, loss: 3.0617, eta: 6:10:27, time: 74.4062
+it: 44000/80000, lr: 0.004930, loss: 3.0822, eta: 6:09:27, time: 64.1524
+it: 44100/80000, lr: 0.004917, loss: 3.1182, eta: 6:08:25, time: 60.5426
+it: 44200/80000, lr: 0.004905, loss: 3.1616, eta: 6:07:30, time: 69.7151
+it: 44300/80000, lr: 0.004893, loss: 3.1018, eta: 6:06:38, time: 73.3409
+it: 44400/80000, lr: 0.004880, loss: 3.1429, eta: 6:05:32, time: 56.7038
+it: 44500/80000, lr: 0.004868, loss: 3.1722, eta: 6:04:27, time: 56.7449
+it: 44600/80000, lr: 0.004856, loss: 3.0832, eta: 6:03:22, time: 56.8985
+it: 44700/80000, lr: 0.004843, loss: 3.1158, eta: 6:02:27, time: 70.3844
+it: 44800/80000, lr: 0.004831, loss: 3.1188, eta: 6:01:21, time: 56.3915
+it: 44900/80000, lr: 0.004819, loss: 3.0893, eta: 6:00:22, time: 64.3369
+it: 45000/80000, lr: 0.004806, loss: 3.0774, eta: 5:59:16, time: 56.3491
+it: 45100/80000, lr: 0.004794, loss: 3.0626, eta: 5:58:22, time: 70.6823
+it: 45200/80000, lr: 0.004782, loss: 3.0466, eta: 5:57:16, time: 56.7101
+it: 45300/80000, lr: 0.004769, loss: 3.1727, eta: 5:56:11, time: 56.9771
+it: 45400/80000, lr: 0.004757, loss: 3.1943, eta: 5:55:16, time: 70.5928
+it: 45500/80000, lr: 0.004744, loss: 3.0863, eta: 5:54:11, time: 56.5749
+it: 45600/80000, lr: 0.004732, loss: 3.1822, eta: 5:53:11, time: 63.5290
+it: 45700/80000, lr: 0.004720, loss: 3.0707, eta: 5:52:06, time: 56.8355
+it: 45800/80000, lr: 0.004707, loss: 3.1623, eta: 5:51:11, time: 70.7324
+it: 45900/80000, lr: 0.004695, loss: 3.1457, eta: 5:50:06, time: 56.7270
+it: 46000/80000, lr: 0.004683, loss: 3.1518, eta: 5:49:00, time: 56.7994
+it: 46100/80000, lr: 0.004670, loss: 3.1667, eta: 5:47:55, time: 56.7498
+it: 46200/80000, lr: 0.004658, loss: 3.1645, eta: 5:47:00, time: 70.7377
+it: 46300/80000, lr: 0.004645, loss: 3.1215, eta: 5:45:55, time: 56.4645
+it: 46400/80000, lr: 0.004633, loss: 3.1276, eta: 5:44:57, time: 66.1506
+it: 46500/80000, lr: 0.004620, loss: 3.1413, eta: 5:43:51, time: 56.0406
+it: 46600/80000, lr: 0.004608, loss: 3.0549, eta: 5:42:56, time: 70.9189
+it: 46700/80000, lr: 0.004596, loss: 3.1162, eta: 5:41:51, time: 56.8572
+it: 46800/80000, lr: 0.004583, loss: 3.0748, eta: 5:40:48, time: 59.1466
+it: 46900/80000, lr: 0.004571, loss: 3.0711, eta: 5:39:53, time: 70.3766
+it: 47000/80000, lr: 0.004558, loss: 3.1764, eta: 5:38:47, time: 56.2461
+it: 47100/80000, lr: 0.004546, loss: 3.1772, eta: 5:37:51, time: 68.7152
+it: 47200/80000, lr: 0.004534, loss: 3.2314, eta: 5:36:50, time: 63.2064
+it: 47300/80000, lr: 0.004521, loss: 3.1989, eta: 5:35:58, time: 75.2043
+it: 47400/80000, lr: 0.004509, loss: 3.0670, eta: 5:34:57, time: 62.7386
+it: 47500/80000, lr: 0.004496, loss: 3.2069, eta: 5:33:57, time: 63.8182
+it: 47600/80000, lr: 0.004484, loss: 3.0701, eta: 5:32:55, time: 61.3258
+it: 47700/80000, lr: 0.004471, loss: 3.0639, eta: 5:32:04, time: 77.9880
+it: 47800/80000, lr: 0.004459, loss: 3.0769, eta: 5:31:06, time: 67.3578
+it: 47900/80000, lr: 0.004446, loss: 3.1039, eta: 5:30:07, time: 64.5071
+it: 48000/80000, lr: 0.004434, loss: 3.1144, eta: 5:29:15, time: 76.8359
+it: 48100/80000, lr: 0.004421, loss: 3.0849, eta: 5:28:13, time: 61.3504
+it: 48200/80000, lr: 0.004409, loss: 3.0700, eta: 5:27:12, time: 62.6554
+it: 48300/80000, lr: 0.004396, loss: 3.0700, eta: 5:26:11, time: 62.6672
+it: 48400/80000, lr: 0.004384, loss: 3.1376, eta: 5:25:20, time: 77.7540
+it: 48500/80000, lr: 0.004371, loss: 3.1178, eta: 5:24:17, time: 61.2030
+it: 48600/80000, lr: 0.004359, loss: 3.0459, eta: 5:23:22, time: 71.6435
+it: 48700/80000, lr: 0.004346, loss: 3.0962, eta: 5:22:22, time: 63.9801
+it: 48800/80000, lr: 0.004334, loss: 3.0883, eta: 5:21:29, time: 76.8703
+it: 48900/80000, lr: 0.004321, loss: 3.0399, eta: 5:20:29, time: 63.7428
+it: 49000/80000, lr: 0.004309, loss: 3.1215, eta: 5:19:28, time: 63.6963
+it: 49100/80000, lr: 0.004296, loss: 3.0977, eta: 5:18:26, time: 61.4121
+it: 49200/80000, lr: 0.004284, loss: 3.0102, eta: 5:17:35, time: 78.2420
+it: 49300/80000, lr: 0.004271, loss: 3.0737, eta: 5:16:38, time: 69.6012
+it: 49400/80000, lr: 0.004259, loss: 3.0678, eta: 5:15:36, time: 62.7853
+it: 49500/80000, lr: 0.004246, loss: 3.0480, eta: 5:14:44, time: 77.0842
+it: 49600/80000, lr: 0.004234, loss: 3.0781, eta: 5:13:43, time: 63.7807
+it: 49700/80000, lr: 0.004221, loss: 3.0752, eta: 5:12:41, time: 62.3961
+it: 49800/80000, lr: 0.004209, loss: 3.0700, eta: 5:11:40, time: 63.2333
+it: 49900/80000, lr: 0.004196, loss: 3.0561, eta: 5:10:47, time: 76.6856
+it: 50000/80000, lr: 0.004184, loss: 3.0408, eta: 5:09:45, time: 61.0050
+it: 50100/80000, lr: 0.004171, loss: 3.0449, eta: 5:08:48, time: 70.7760
+it: 50200/80000, lr: 0.004159, loss: 3.0320, eta: 5:07:46, time: 62.1803
+it: 50300/80000, lr: 0.004146, loss: 3.0007, eta: 5:06:54, time: 78.7186
+it: 50400/80000, lr: 0.004133, loss: 3.0885, eta: 5:05:52, time: 62.1841
+it: 50500/80000, lr: 0.004121, loss: 2.9939, eta: 5:04:50, time: 61.9342
+it: 50600/80000, lr: 0.004108, loss: 3.0763, eta: 5:03:56, time: 75.5326
+it: 50700/80000, lr: 0.004096, loss: 2.9892, eta: 5:02:53, time: 60.9244
+it: 50800/80000, lr: 0.004083, loss: 3.0151, eta: 5:01:57, time: 71.4582
+it: 50900/80000, lr: 0.004071, loss: 3.0889, eta: 5:00:56, time: 63.5299
+it: 51000/80000, lr: 0.004058, loss: 3.0953, eta: 5:00:02, time: 76.6083
+it: 51100/80000, lr: 0.004045, loss: 3.0717, eta: 4:59:00, time: 62.4232
+it: 51200/80000, lr: 0.004033, loss: 3.1425, eta: 4:57:58, time: 63.0125
+it: 51300/80000, lr: 0.004020, loss: 3.0467, eta: 4:56:56, time: 62.2933
+it: 51400/80000, lr: 0.004008, loss: 3.0634, eta: 4:56:03, time: 77.0429
+it: 51500/80000, lr: 0.003995, loss: 3.1035, eta: 4:55:04, time: 68.3025
+it: 51600/80000, lr: 0.003982, loss: 3.1099, eta: 4:54:02, time: 61.8663
+it: 51700/80000, lr: 0.003970, loss: 3.0377, eta: 4:52:59, time: 61.7401
+it: 51800/80000, lr: 0.003957, loss: 3.0440, eta: 4:52:06, time: 77.8647
+it: 51900/80000, lr: 0.003944, loss: 2.9802, eta: 4:51:04, time: 62.4790
+it: 52000/80000, lr: 0.003932, loss: 3.1138, eta: 4:50:02, time: 62.4752
+it: 52100/80000, lr: 0.003919, loss: 3.0777, eta: 4:49:08, time: 76.9414
+it: 52200/80000, lr: 0.003907, loss: 3.0916, eta: 4:48:05, time: 60.9854
+it: 52300/80000, lr: 0.003894, loss: 3.0849, eta: 4:47:07, time: 69.7730
+it: 52400/80000, lr: 0.003881, loss: 3.0723, eta: 4:46:06, time: 64.3092
+it: 52500/80000, lr: 0.003869, loss: 2.9883, eta: 4:45:11, time: 76.0023
+it: 52600/80000, lr: 0.003856, loss: 3.0120, eta: 4:44:08, time: 62.3246
+it: 52700/80000, lr: 0.003843, loss: 3.0637, eta: 4:43:07, time: 63.3704
+it: 52800/80000, lr: 0.003831, loss: 3.0823, eta: 4:42:05, time: 62.4692
+it: 52900/80000, lr: 0.003818, loss: 3.1001, eta: 4:41:10, time: 76.6616
+it: 53000/80000, lr: 0.003805, loss: 3.0484, eta: 4:40:11, time: 68.0604
+it: 53100/80000, lr: 0.003793, loss: 3.0718, eta: 4:39:09, time: 63.8303
+it: 53200/80000, lr: 0.003780, loss: 3.0374, eta: 4:38:13, time: 73.8860
+it: 53300/80000, lr: 0.003767, loss: 3.0405, eta: 4:37:13, time: 66.7280
+it: 53400/80000, lr: 0.003754, loss: 3.0159, eta: 4:36:11, time: 62.9612
+it: 53500/80000, lr: 0.003742, loss: 3.0217, eta: 4:35:09, time: 63.2510
+it: 53600/80000, lr: 0.003729, loss: 3.0706, eta: 4:34:11, time: 72.0723
+it: 53700/80000, lr: 0.003716, loss: 3.1353, eta: 4:33:09, time: 61.8606
+it: 53800/80000, lr: 0.003704, loss: 3.0931, eta: 4:32:05, time: 58.3520
+it: 53900/80000, lr: 0.003691, loss: 3.0212, eta: 4:31:00, time: 57.2635
+it: 54000/80000, lr: 0.003678, loss: 3.1049, eta: 4:29:59, time: 65.7774
+it: 54100/80000, lr: 0.003665, loss: 2.9869, eta: 4:28:55, time: 57.5242
+it: 54200/80000, lr: 0.003653, loss: 3.0357, eta: 4:27:50, time: 56.8636
+it: 54300/80000, lr: 0.003640, loss: 3.0623, eta: 4:26:45, time: 57.1508
+it: 54400/80000, lr: 0.003627, loss: 2.9661, eta: 4:25:44, time: 65.3206
+it: 54500/80000, lr: 0.003614, loss: 2.9748, eta: 4:24:42, time: 61.4096
+it: 54600/80000, lr: 0.003602, loss: 3.0727, eta: 4:23:37, time: 56.9387
+it: 54700/80000, lr: 0.003589, loss: 3.0309, eta: 4:22:36, time: 65.6599
+it: 54800/80000, lr: 0.003576, loss: 3.1139, eta: 4:21:32, time: 57.6114
+it: 54900/80000, lr: 0.003563, loss: 2.9899, eta: 4:20:27, time: 56.9839
+it: 55000/80000, lr: 0.003551, loss: 2.9608, eta: 4:19:23, time: 57.6046
+it: 55100/80000, lr: 0.003538, loss: 3.1649, eta: 4:18:22, time: 65.3096
+it: 55200/80000, lr: 0.003525, loss: 3.0347, eta: 4:17:18, time: 59.6640
+it: 55300/80000, lr: 0.003512, loss: 3.0620, eta: 4:16:14, time: 56.6805
+it: 55400/80000, lr: 0.003499, loss: 2.9904, eta: 4:15:09, time: 57.0058
+it: 55500/80000, lr: 0.003487, loss: 3.0078, eta: 4:14:08, time: 66.0379
+it: 55600/80000, lr: 0.003474, loss: 3.0810, eta: 4:13:04, time: 57.1609
+it: 55700/80000, lr: 0.003461, loss: 3.0350, eta: 4:12:00, time: 57.1359
+it: 55800/80000, lr: 0.003448, loss: 3.0548, eta: 4:10:55, time: 56.5443
+it: 55900/80000, lr: 0.003435, loss: 3.0808, eta: 4:09:54, time: 66.2341
+it: 56000/80000, lr: 0.003422, loss: 3.1160, eta: 4:08:51, time: 59.0920
+it: 56100/80000, lr: 0.003410, loss: 3.0026, eta: 4:07:47, time: 57.3860
+it: 56200/80000, lr: 0.003397, loss: 3.0510, eta: 4:06:46, time: 65.9685
+it: 56300/80000, lr: 0.003384, loss: 3.0422, eta: 4:05:42, time: 57.3889
+it: 56400/80000, lr: 0.003371, loss: 3.0170, eta: 4:04:37, time: 56.6506
+it: 56500/80000, lr: 0.003358, loss: 2.9944, eta: 4:03:33, time: 57.1878
+it: 56600/80000, lr: 0.003345, loss: 3.0259, eta: 4:02:32, time: 64.9872
+it: 56700/80000, lr: 0.003333, loss: 3.0113, eta: 4:01:29, time: 59.8507
+it: 56800/80000, lr: 0.003320, loss: 3.0864, eta: 4:00:24, time: 56.9813
+it: 56900/80000, lr: 0.003307, loss: 3.0158, eta: 3:59:20, time: 56.7786
+it: 57000/80000, lr: 0.003294, loss: 3.1133, eta: 3:58:20, time: 66.1835
+it: 57100/80000, lr: 0.003281, loss: 3.0055, eta: 3:57:15, time: 56.8697
+it: 57200/80000, lr: 0.003268, loss: 3.0165, eta: 3:56:11, time: 57.1423
+it: 57300/80000, lr: 0.003255, loss: 3.1092, eta: 3:55:10, time: 65.2192
+it: 57400/80000, lr: 0.003242, loss: 3.0987, eta: 3:54:07, time: 59.4015
+it: 57500/80000, lr: 0.003229, loss: 2.9548, eta: 3:53:03, time: 56.6443
+it: 57600/80000, lr: 0.003216, loss: 3.0702, eta: 3:51:59, time: 57.4524
+it: 57700/80000, lr: 0.003204, loss: 2.9548, eta: 3:50:58, time: 64.8868
+it: 57800/80000, lr: 0.003191, loss: 3.0162, eta: 3:49:54, time: 57.1966
+it: 57900/80000, lr: 0.003178, loss: 3.0422, eta: 3:48:49, time: 56.7217
+it: 58000/80000, lr: 0.003165, loss: 3.0677, eta: 3:47:45, time: 56.9166
+it: 58100/80000, lr: 0.003152, loss: 3.1131, eta: 3:46:44, time: 65.7684
+it: 58200/80000, lr: 0.003139, loss: 3.0463, eta: 3:45:42, time: 59.8683
+it: 58300/80000, lr: 0.003126, loss: 3.0093, eta: 3:44:38, time: 57.2812
+it: 58400/80000, lr: 0.003113, loss: 3.0786, eta: 3:43:33, time: 56.2570
+it: 58500/80000, lr: 0.003100, loss: 3.0984, eta: 3:42:33, time: 66.4735
+it: 58600/80000, lr: 0.003087, loss: 2.9375, eta: 3:41:29, time: 56.5992
+it: 58700/80000, lr: 0.003074, loss: 3.0734, eta: 3:40:25, time: 57.3171
+it: 58800/80000, lr: 0.003061, loss: 2.9582, eta: 3:39:23, time: 63.3109
+it: 58900/80000, lr: 0.003048, loss: 3.0169, eta: 3:38:21, time: 60.3622
+it: 59000/80000, lr: 0.003035, loss: 3.0440, eta: 3:37:17, time: 56.7384
+it: 59100/80000, lr: 0.003022, loss: 3.0291, eta: 3:36:13, time: 56.9332
+it: 59200/80000, lr: 0.003009, loss: 2.9642, eta: 3:35:12, time: 65.8068
+it: 59300/80000, lr: 0.002996, loss: 2.9418, eta: 3:34:08, time: 57.2409
+it: 59400/80000, lr: 0.002983, loss: 2.9842, eta: 3:33:04, time: 57.2058
+it: 59500/80000, lr: 0.002970, loss: 2.9533, eta: 3:32:01, time: 56.8717
+it: 59600/80000, lr: 0.002957, loss: 3.0514, eta: 3:31:01, time: 68.4056
+it: 59700/80000, lr: 0.002944, loss: 3.0123, eta: 3:29:57, time: 56.7678
+it: 59800/80000, lr: 0.002931, loss: 3.0193, eta: 3:28:53, time: 57.0636
+it: 59900/80000, lr: 0.002918, loss: 2.9685, eta: 3:27:52, time: 65.2922
+it: 60000/80000, lr: 0.002905, loss: 2.9665, eta: 3:26:49, time: 57.6059
+it: 60100/80000, lr: 0.002891, loss: 2.9259, eta: 3:25:45, time: 56.7753
+it: 60200/80000, lr: 0.002878, loss: 2.9921, eta: 3:24:41, time: 57.4158
+it: 60300/80000, lr: 0.002865, loss: 3.0436, eta: 3:23:40, time: 65.2201
+it: 60400/80000, lr: 0.002852, loss: 3.0492, eta: 3:22:38, time: 59.9364
+it: 60500/80000, lr: 0.002839, loss: 3.0424, eta: 3:21:34, time: 57.3507
+it: 60600/80000, lr: 0.002826, loss: 2.9812, eta: 3:20:30, time: 57.0830
+it: 60700/80000, lr: 0.002813, loss: 2.9121, eta: 3:19:30, time: 67.3850
+it: 60800/80000, lr: 0.002800, loss: 3.0015, eta: 3:18:27, time: 57.3633
+it: 60900/80000, lr: 0.002787, loss: 3.1181, eta: 3:17:23, time: 57.3521
+it: 61000/80000, lr: 0.002774, loss: 3.0613, eta: 3:16:19, time: 56.3572
+it: 61100/80000, lr: 0.002760, loss: 2.9199, eta: 3:15:19, time: 68.4879
+it: 61200/80000, lr: 0.002747, loss: 3.0538, eta: 3:14:16, time: 56.9461
+it: 61300/80000, lr: 0.002734, loss: 2.9775, eta: 3:13:12, time: 57.3200
+it: 61400/80000, lr: 0.002721, loss: 2.9594, eta: 3:12:12, time: 66.4142
+it: 61500/80000, lr: 0.002708, loss: 2.9402, eta: 3:11:08, time: 57.1285
+it: 61600/80000, lr: 0.002695, loss: 2.9706, eta: 3:10:05, time: 57.0887
+it: 61700/80000, lr: 0.002681, loss: 2.9911, eta: 3:09:01, time: 56.8970
+it: 61800/80000, lr: 0.002668, loss: 2.9736, eta: 3:08:01, time: 66.8782
+it: 61900/80000, lr: 0.002655, loss: 3.0648, eta: 3:06:57, time: 56.7181
+it: 62000/80000, lr: 0.002642, loss: 3.0365, eta: 3:05:54, time: 57.1183
+it: 62100/80000, lr: 0.002629, loss: 2.9754, eta: 3:04:50, time: 56.5572
+it: 62200/80000, lr: 0.002615, loss: 2.9827, eta: 3:03:50, time: 66.2721
+it: 62300/80000, lr: 0.002602, loss: 3.0153, eta: 3:02:46, time: 56.6144
+it: 62400/80000, lr: 0.002589, loss: 2.9772, eta: 3:01:43, time: 57.1530
+it: 62500/80000, lr: 0.002576, loss: 3.0086, eta: 3:00:42, time: 64.5275
+it: 62600/80000, lr: 0.002562, loss: 2.9524, eta: 2:59:39, time: 59.5877
+it: 62700/80000, lr: 0.002549, loss: 2.9818, eta: 2:58:36, time: 57.0847
+it: 62800/80000, lr: 0.002536, loss: 2.9237, eta: 2:57:32, time: 56.9267
+it: 62900/80000, lr: 0.002523, loss: 2.9228, eta: 2:56:31, time: 65.2592
+it: 63000/80000, lr: 0.002509, loss: 2.9202, eta: 2:55:28, time: 56.7154
+it: 63100/80000, lr: 0.002496, loss: 2.9533, eta: 2:54:25, time: 57.0602
+it: 63200/80000, lr: 0.002483, loss: 3.0254, eta: 2:53:21, time: 56.2865
+it: 63300/80000, lr: 0.002469, loss: 2.9794, eta: 2:52:21, time: 68.4440
+it: 63400/80000, lr: 0.002456, loss: 2.9488, eta: 2:51:18, time: 56.7315
+it: 63500/80000, lr: 0.002443, loss: 2.9742, eta: 2:50:15, time: 57.3530
+it: 63600/80000, lr: 0.002430, loss: 2.9913, eta: 2:49:11, time: 56.0329
+it: 63700/80000, lr: 0.002416, loss: 2.9899, eta: 2:48:10, time: 65.1598
+it: 63800/80000, lr: 0.002403, loss: 2.9423, eta: 2:47:07, time: 56.9469
+it: 63900/80000, lr: 0.002389, loss: 2.9092, eta: 2:46:04, time: 56.7553
+it: 64000/80000, lr: 0.002376, loss: 2.9212, eta: 2:45:04, time: 70.3036
+it: 64100/80000, lr: 0.002363, loss: 2.9333, eta: 2:44:01, time: 56.8159
+it: 64200/80000, lr: 0.002349, loss: 2.9237, eta: 2:42:58, time: 56.9653
+it: 64300/80000, lr: 0.002336, loss: 2.9226, eta: 2:41:55, time: 56.8032
+it: 64400/80000, lr: 0.002323, loss: 2.9898, eta: 2:40:54, time: 65.7369
+it: 64500/80000, lr: 0.002309, loss: 2.9599, eta: 2:39:51, time: 57.0050
+it: 64600/80000, lr: 0.002296, loss: 2.9613, eta: 2:38:48, time: 57.5698
+it: 64700/80000, lr: 0.002282, loss: 2.9936, eta: 2:37:45, time: 56.4945
+it: 64800/80000, lr: 0.002269, loss: 2.8887, eta: 2:36:44, time: 67.9163
+it: 64900/80000, lr: 0.002255, loss: 2.9353, eta: 2:35:41, time: 57.0309
+it: 65000/80000, lr: 0.002242, loss: 2.8862, eta: 2:34:38, time: 57.1903
+it: 65100/80000, lr: 0.002229, loss: 2.9585, eta: 2:33:35, time: 56.2388
+it: 65200/80000, lr: 0.002215, loss: 2.9063, eta: 2:32:34, time: 66.3211
+it: 65300/80000, lr: 0.002202, loss: 2.8896, eta: 2:31:31, time: 57.0471
+it: 65400/80000, lr: 0.002188, loss: 2.9041, eta: 2:30:28, time: 56.6210
+it: 65500/80000, lr: 0.002175, loss: 2.9641, eta: 2:29:28, time: 66.0026
+it: 65600/80000, lr: 0.002161, loss: 2.9317, eta: 2:28:25, time: 56.8007
+it: 65700/80000, lr: 0.002148, loss: 2.9494, eta: 2:27:22, time: 57.3330
+it: 65800/80000, lr: 0.002134, loss: 2.9218, eta: 2:26:19, time: 56.8582
+it: 65900/80000, lr: 0.002121, loss: 2.9791, eta: 2:25:18, time: 65.2993
+it: 66000/80000, lr: 0.002107, loss: 2.9376, eta: 2:24:15, time: 56.5379
+it: 66100/80000, lr: 0.002094, loss: 2.9512, eta: 2:23:12, time: 57.5758
+it: 66200/80000, lr: 0.002080, loss: 2.9720, eta: 2:22:09, time: 57.1160
+it: 66300/80000, lr: 0.002066, loss: 2.9391, eta: 2:21:08, time: 65.7096
+it: 66400/80000, lr: 0.002053, loss: 2.9129, eta: 2:20:06, time: 56.9349
+it: 66500/80000, lr: 0.002039, loss: 2.9295, eta: 2:19:03, time: 56.6941
+it: 66600/80000, lr: 0.002026, loss: 2.9620, eta: 2:18:02, time: 64.9904
+it: 66700/80000, lr: 0.002012, loss: 2.9045, eta: 2:16:59, time: 56.6665
+it: 66800/80000, lr: 0.001998, loss: 2.9263, eta: 2:15:56, time: 57.4849
+it: 66900/80000, lr: 0.001985, loss: 2.9228, eta: 2:14:53, time: 56.1668
+it: 67000/80000, lr: 0.001971, loss: 2.9362, eta: 2:13:52, time: 67.0112
+it: 67100/80000, lr: 0.001957, loss: 2.8598, eta: 2:12:50, time: 56.7558
+it: 67200/80000, lr: 0.001944, loss: 2.8799, eta: 2:11:47, time: 57.0331
+it: 67300/80000, lr: 0.001930, loss: 2.9052, eta: 2:10:44, time: 56.8959
+it: 67400/80000, lr: 0.001916, loss: 2.9348, eta: 2:09:43, time: 64.1650
+it: 67500/80000, lr: 0.001903, loss: 2.9513, eta: 2:08:40, time: 57.1557
+it: 67600/80000, lr: 0.001889, loss: 2.8605, eta: 2:07:38, time: 56.9350
+it: 67700/80000, lr: 0.001875, loss: 2.8997, eta: 2:06:35, time: 57.7427
+it: 67800/80000, lr: 0.001862, loss: 2.9181, eta: 2:05:34, time: 64.9167
+it: 67900/80000, lr: 0.001848, loss: 2.9909, eta: 2:04:32, time: 57.3363
+it: 68000/80000, lr: 0.001834, loss: 2.9208, eta: 2:03:29, time: 56.6429
+it: 68100/80000, lr: 0.001820, loss: 2.9138, eta: 2:02:28, time: 65.1971
+it: 68200/80000, lr: 0.001807, loss: 2.9158, eta: 2:01:25, time: 56.8899
+it: 68300/80000, lr: 0.001793, loss: 2.9482, eta: 2:00:23, time: 56.9297
+it: 68400/80000, lr: 0.001779, loss: 2.8691, eta: 1:59:20, time: 56.0851
+it: 68500/80000, lr: 0.001765, loss: 2.8999, eta: 1:58:19, time: 67.8562
+it: 68600/80000, lr: 0.001751, loss: 2.9022, eta: 1:57:17, time: 57.0473
+it: 68700/80000, lr: 0.001738, loss: 2.8996, eta: 1:56:14, time: 56.7247
+it: 68800/80000, lr: 0.001724, loss: 2.9056, eta: 1:55:12, time: 57.1637
+it: 68900/80000, lr: 0.001710, loss: 2.8832, eta: 1:54:11, time: 65.1150
+it: 69000/80000, lr: 0.001696, loss: 2.9080, eta: 1:53:08, time: 57.2087
+it: 69100/80000, lr: 0.001682, loss: 2.9050, eta: 1:52:06, time: 56.4004
+it: 69200/80000, lr: 0.001668, loss: 2.9176, eta: 1:51:05, time: 66.6117
+it: 69300/80000, lr: 0.001654, loss: 2.8991, eta: 1:50:02, time: 56.9246
+it: 69400/80000, lr: 0.001640, loss: 2.9241, eta: 1:49:00, time: 57.0688
+it: 69500/80000, lr: 0.001626, loss: 2.8727, eta: 1:47:57, time: 57.0085
+it: 69600/80000, lr: 0.001613, loss: 2.8940, eta: 1:46:56, time: 64.8925
+it: 69700/80000, lr: 0.001599, loss: 2.9520, eta: 1:45:54, time: 57.4599
+it: 69800/80000, lr: 0.001585, loss: 2.9316, eta: 1:44:51, time: 56.9468
+it: 69900/80000, lr: 0.001571, loss: 2.9433, eta: 1:43:49, time: 59.2394
+it: 70000/80000, lr: 0.001557, loss: 2.9264, eta: 1:42:48, time: 65.1983
+it: 70100/80000, lr: 0.001543, loss: 2.8933, eta: 1:41:46, time: 57.2300
+it: 70200/80000, lr: 0.001529, loss: 2.9056, eta: 1:40:44, time: 56.7761
+training done, model saved to: ./mv3-leaky/model_70200.pth
+it: 70300/80000, lr: 0.001515, loss: 2.8599, eta: 1:39:41, time: 56.9336
+it: 70400/80000, lr: 0.001500, loss: 2.8725, eta: 1:38:40, time: 65.5160
+training done, model saved to: ./mv3-leaky/model_70400.pth
+it: 70500/80000, lr: 0.001486, loss: 2.8661, eta: 1:37:38, time: 57.0001
+it: 70600/80000, lr: 0.001472, loss: 2.9078, eta: 1:36:35, time: 56.5426
+training done, model saved to: ./mv3-leaky/model_70600.pth
+it: 70700/80000, lr: 0.001458, loss: 2.8302, eta: 1:35:35, time: 68.2014
+it: 70800/80000, lr: 0.001444, loss: 2.9092, eta: 1:34:32, time: 57.4812
+training done, model saved to: ./mv3-leaky/model_70800.pth
+it: 70900/80000, lr: 0.001430, loss: 2.9184, eta: 1:33:30, time: 56.7734
+it: 71000/80000, lr: 0.001416, loss: 2.8553, eta: 1:32:28, time: 57.3899
+training done, model saved to: ./mv3-leaky/model_71000.pth
+it: 71100/80000, lr: 0.001402, loss: 2.8564, eta: 1:31:27, time: 65.9907
+it: 71200/80000, lr: 0.001387, loss: 2.9341, eta: 1:30:25, time: 57.1587
+training done, model saved to: ./mv3-leaky/model_71200.pth
+it: 71300/80000, lr: 0.001373, loss: 2.8904, eta: 1:29:22, time: 56.7092
+it: 71400/80000, lr: 0.001359, loss: 2.8890, eta: 1:28:21, time: 59.1823
+training done, model saved to: ./mv3-leaky/model_71400.pth
+it: 71500/80000, lr: 0.001345, loss: 2.8774, eta: 1:27:19, time: 65.4371
+it: 71600/80000, lr: 0.001331, loss: 2.8808, eta: 1:26:17, time: 57.1199
+training done, model saved to: ./mv3-leaky/model_71600.pth
+it: 71700/80000, lr: 0.001316, loss: 2.8827, eta: 1:25:15, time: 56.9075
+it: 71800/80000, lr: 0.001302, loss: 2.9543, eta: 1:24:14, time: 65.6140
+training done, model saved to: ./mv3-leaky/model_71800.pth
+it: 71900/80000, lr: 0.001288, loss: 2.8827, eta: 1:23:12, time: 57.2706
+it: 72000/80000, lr: 0.001273, loss: 2.8878, eta: 1:22:10, time: 56.7823
+training done, model saved to: ./mv3-leaky/model_72000.pth
+it: 72100/80000, lr: 0.001259, loss: 2.8844, eta: 1:21:08, time: 59.8808
+it: 72200/80000, lr: 0.001245, loss: 2.8824, eta: 1:20:06, time: 64.7437
+training done, model saved to: ./mv3-leaky/model_72200.pth
+it: 72300/80000, lr: 0.001230, loss: 2.8436, eta: 1:19:04, time: 57.6012
+it: 72400/80000, lr: 0.001216, loss: 2.8858, eta: 1:18:02, time: 56.7023
+training done, model saved to: ./mv3-leaky/model_72400.pth
+it: 72500/80000, lr: 0.001202, loss: 2.8895, eta: 1:17:00, time: 57.2418
+it: 72600/80000, lr: 0.001187, loss: 2.7953, eta: 1:15:59, time: 64.9686
+training done, model saved to: ./mv3-leaky/model_72600.pth
+it: 72700/80000, lr: 0.001173, loss: 2.7828, eta: 1:14:57, time: 57.6883
+it: 72800/80000, lr: 0.001158, loss: 2.8452, eta: 1:13:55, time: 56.4409
+training done, model saved to: ./mv3-leaky/model_72800.pth
+it: 72900/80000, lr: 0.001144, loss: 2.8412, eta: 1:12:53, time: 59.7270
+it: 73000/80000, lr: 0.001129, loss: 2.8702, eta: 1:11:52, time: 66.1469
+training done, model saved to: ./mv3-leaky/model_73000.pth
+it: 73100/80000, lr: 0.001115, loss: 2.8620, eta: 1:10:50, time: 56.8514
+it: 73200/80000, lr: 0.001100, loss: 2.9118, eta: 1:09:48, time: 57.3774
+training done, model saved to: ./mv3-leaky/model_73200.pth
+it: 73300/80000, lr: 0.001086, loss: 2.8482, eta: 1:08:47, time: 65.2648
+it: 73400/80000, lr: 0.001071, loss: 2.8565, eta: 1:07:45, time: 57.6051
+training done, model saved to: ./mv3-leaky/model_73400.pth
+it: 73500/80000, lr: 0.001056, loss: 2.8650, eta: 1:06:43, time: 56.3418
+it: 73600/80000, lr: 0.001042, loss: 2.8580, eta: 1:05:41, time: 60.1901
+training done, model saved to: ./mv3-leaky/model_73600.pth
+it: 73700/80000, lr: 0.001027, loss: 2.8493, eta: 1:04:40, time: 64.4518
+it: 73800/80000, lr: 0.001012, loss: 2.8368, eta: 1:03:38, time: 57.2690
+training done, model saved to: ./mv3-leaky/model_73800.pth
+it: 73900/80000, lr: 0.000998, loss: 2.8300, eta: 1:02:36, time: 57.1616
+it: 74000/80000, lr: 0.000983, loss: 2.8267, eta: 1:01:34, time: 56.9182
+training done, model saved to: ./mv3-leaky/model_74000.pth
+it: 74100/80000, lr: 0.000968, loss: 2.7793, eta: 1:00:33, time: 64.8557
+it: 74200/80000, lr: 0.000953, loss: 2.9041, eta: 0:59:31, time: 56.8821
+training done, model saved to: ./mv3-leaky/model_74200.pth
+it: 74300/80000, lr: 0.000939, loss: 2.8326, eta: 0:58:29, time: 59.7971
+it: 74400/80000, lr: 0.000924, loss: 2.8242, eta: 0:57:27, time: 56.2241
+training done, model saved to: ./mv3-leaky/model_74400.pth
+it: 74500/80000, lr: 0.000909, loss: 2.8288, eta: 0:56:26, time: 66.5098
+it: 74600/80000, lr: 0.000894, loss: 2.8709, eta: 0:55:24, time: 56.6601
+training done, model saved to: ./mv3-leaky/model_74600.pth
+it: 74700/80000, lr: 0.000879, loss: 2.8444, eta: 0:54:22, time: 57.2747
+it: 74800/80000, lr: 0.000864, loss: 2.8490, eta: 0:53:21, time: 65.4603
+training done, model saved to: ./mv3-leaky/model_74800.pth
+it: 74900/80000, lr: 0.000849, loss: 2.8305, eta: 0:52:19, time: 57.3534
+it: 75000/80000, lr: 0.000834, loss: 2.9088, eta: 0:51:17, time: 56.4335
+training done, model saved to: ./mv3-leaky/model_75000.pth
+it: 75100/80000, lr: 0.000819, loss: 2.8455, eta: 0:50:15, time: 59.8568
+it: 75200/80000, lr: 0.000804, loss: 2.8263, eta: 0:49:14, time: 66.1194
+training done, model saved to: ./mv3-leaky/model_75200.pth
+it: 75300/80000, lr: 0.000789, loss: 2.8567, eta: 0:48:12, time: 57.1410
+it: 75400/80000, lr: 0.000774, loss: 2.8071, eta: 0:47:10, time: 57.6307
+training done, model saved to: ./mv3-leaky/model_75400.pth
+it: 75500/80000, lr: 0.000759, loss: 2.8742, eta: 0:46:09, time: 56.4554
+it: 75600/80000, lr: 0.000744, loss: 2.7734, eta: 0:45:07, time: 64.7287
+training done, model saved to: ./mv3-leaky/model_75600.pth
+it: 75700/80000, lr: 0.000728, loss: 2.7952, eta: 0:44:06, time: 56.6157
+it: 75800/80000, lr: 0.000713, loss: 2.8571, eta: 0:43:04, time: 59.6296
+training done, model saved to: ./mv3-leaky/model_75800.pth
+it: 75900/80000, lr: 0.000698, loss: 2.7979, eta: 0:42:03, time: 64.9965
+it: 76000/80000, lr: 0.000682, loss: 2.8502, eta: 0:41:01, time: 57.4123
+training done, model saved to: ./mv3-leaky/model_76000.pth
+it: 76100/80000, lr: 0.000667, loss: 2.7933, eta: 0:39:59, time: 57.3903
+it: 76200/80000, lr: 0.000652, loss: 2.8224, eta: 0:38:57, time: 57.2931
+training done, model saved to: ./mv3-leaky/model_76200.pth
+it: 76300/80000, lr: 0.000636, loss: 2.7952, eta: 0:37:56, time: 65.2495
+it: 76400/80000, lr: 0.000621, loss: 2.7713, eta: 0:36:54, time: 56.8668
+training done, model saved to: ./mv3-leaky/model_76400.pth
+it: 76500/80000, lr: 0.000605, loss: 2.7907, eta: 0:35:53, time: 57.3837
+it: 76600/80000, lr: 0.000590, loss: 2.8190, eta: 0:34:51, time: 58.8617
+training done, model saved to: ./mv3-leaky/model_76600.pth
+it: 76700/80000, lr: 0.000574, loss: 2.7972, eta: 0:33:50, time: 65.1485
+it: 76800/80000, lr: 0.000558, loss: 2.7774, eta: 0:32:48, time: 56.9959
+training done, model saved to: ./mv3-leaky/model_76800.pth
+it: 76900/80000, lr: 0.000543, loss: 2.8074, eta: 0:31:46, time: 57.2055
+it: 77000/80000, lr: 0.000527, loss: 2.8466, eta: 0:30:45, time: 56.5008
+training done, model saved to: ./mv3-leaky/model_77000.pth
+it: 77100/80000, lr: 0.000511, loss: 2.8180, eta: 0:29:43, time: 66.5115
+it: 77200/80000, lr: 0.000495, loss: 2.7830, eta: 0:28:42, time: 56.5682
+training done, model saved to: ./mv3-leaky/model_77200.pth
+it: 77300/80000, lr: 0.000479, loss: 2.8232, eta: 0:27:40, time: 59.6153
+it: 77400/80000, lr: 0.000463, loss: 2.7958, eta: 0:26:39, time: 64.6479
+training done, model saved to: ./mv3-leaky/model_77400.pth
+it: 77500/80000, lr: 0.000447, loss: 2.8797, eta: 0:25:37, time: 56.7921
+it: 77600/80000, lr: 0.000431, loss: 2.8199, eta: 0:24:35, time: 57.1205
+training done, model saved to: ./mv3-leaky/model_77600.pth
+it: 77700/80000, lr: 0.000415, loss: 2.7686, eta: 0:23:34, time: 56.8830
+it: 77800/80000, lr: 0.000399, loss: 2.7910, eta: 0:22:33, time: 65.3780
+training done, model saved to: ./mv3-leaky/model_77800.pth
+it: 77900/80000, lr: 0.000382, loss: 2.8097, eta: 0:21:31, time: 56.9000
+it: 78000/80000, lr: 0.000366, loss: 2.7802, eta: 0:20:29, time: 59.2345
+training done, model saved to: ./mv3-leaky/model_78000.pth
+it: 78100/80000, lr: 0.000349, loss: 2.7512, eta: 0:19:28, time: 56.7462
+it: 78200/80000, lr: 0.000333, loss: 2.7901, eta: 0:18:26, time: 65.5576
+training done, model saved to: ./mv3-leaky/model_78200.pth
+it: 78300/80000, lr: 0.000316, loss: 2.8106, eta: 0:17:25, time: 57.2236
+it: 78400/80000, lr: 0.000299, loss: 2.8248, eta: 0:16:23, time: 56.7782
+training done, model saved to: ./mv3-leaky/model_78400.pth
+it: 78500/80000, lr: 0.000282, loss: 2.7610, eta: 0:15:22, time: 65.4812
+it: 78600/80000, lr: 0.000265, loss: 2.7912, eta: 0:14:20, time: 56.9053
+training done, model saved to: ./mv3-leaky/model_78600.pth
+it: 78700/80000, lr: 0.000248, loss: 2.7496, eta: 0:13:19, time: 56.4993
+it: 78800/80000, lr: 0.000231, loss: 2.7513, eta: 0:12:17, time: 59.5706
+training done, model saved to: ./mv3-leaky/model_78800.pth
+it: 78900/80000, lr: 0.000214, loss: 2.7934, eta: 0:11:16, time: 65.1253
+it: 79000/80000, lr: 0.000196, loss: 2.8445, eta: 0:10:15, time: 56.9434
+training done, model saved to: ./mv3-leaky/model_79000.pth
+it: 79100/80000, lr: 0.000178, loss: 2.7414, eta: 0:09:13, time: 57.1164
+it: 79200/80000, lr: 0.000160, loss: 2.7645, eta: 0:08:12, time: 56.9538
+training done, model saved to: ./mv3-leaky/model_79200.pth
+it: 79300/80000, lr: 0.000142, loss: 2.7936, eta: 0:07:10, time: 65.2909
+it: 79400/80000, lr: 0.000124, loss: 2.7716, eta: 0:06:09, time: 56.8670
+training done, model saved to: ./mv3-leaky/model_79400.pth
+it: 79500/80000, lr: 0.000105, loss: 2.7896, eta: 0:05:07, time: 59.8481
+it: 79600/80000, lr: 0.000086, loss: 2.7675, eta: 0:04:06, time: 56.5751
+training done, model saved to: ./mv3-leaky/model_79600.pth
+it: 79700/80000, lr: 0.000067, loss: 2.7355, eta: 0:03:04, time: 64.7098
+it: 79800/80000, lr: 0.000046, loss: 2.7048, eta: 0:02:03, time: 57.1534
+training done, model saved to: ./mv3-leaky/model_79800.pth
+it: 79900/80000, lr: 0.000025, loss: 2.7449, eta: 0:01:02, time: 57.1819
+it: 80000/80000, lr: 0.000000, loss: 2.7871, eta: 0:00:00, time: 64.8444
+training done, model saved to: ./mv3-leaky/model_final2.pth
